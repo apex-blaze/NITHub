@@ -1,0 +1,23 @@
+{
+  "name": "nithub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apex-blaze/NITHub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apex-blaze/NITHub/issues"
+  },
+  "homepage": "https://github.com/apex-blaze/NITHub#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
