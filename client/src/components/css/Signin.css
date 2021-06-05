@@ -1,0 +1,29 @@
+.signin{
+    justify-items: center;
+    align-items: center;
+}
+.signin-header{
+    border-radius: 2px solid #00ba8e;
+    text-align: center;
+}
+.signin-button {
+    background-color: #00ba8e; /* Green */
+    border: 2px solid #00ba8e;
+    border-radius: 9px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 22px;
+    width: 47%;
+    padding: 0.6rem 0;
+    box-shadow: 2px 2px;
+    margin:0 auto;
+
+  }
+  .signin-logo{
+      color: #00ba8e;
+      display: block;
+      margin: 0 auto;
+  }
+  
