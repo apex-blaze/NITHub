@@ -1,13 +1,15 @@
 import React from 'react';
 import Logo from "./Logo";
-import "./Navbar.css";
+import "./css/Navbar.css";
 import Navlist from "./Navlist";
+import Navdesktop  from "./Navdesktop"
 function Header() {
+    
     return (
         <div className="navbar">
             <Logo/>
-            <h1 className="header-title">NIT<span className="header-span">Hub</span></h1>
-           <Navlist/>
+            <Navdesktop/>
+            <Navlist/>
         </div>
         
     );

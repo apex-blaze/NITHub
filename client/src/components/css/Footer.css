@@ -1,0 +1,50 @@
+.footer {
+    height: 6.4rem;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    border-radius: 0px;
+    position: sticky;
+    
+  
+} 
+.footlist{
+  display: inline;
+  position: absolute;
+  top: 0.5rem;
+  left:7rem;
+}
+.footcompo{
+  margin:0rem 2rem;
+  font-size: 1.1rem;
+ font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ font-weight: 500;
+  ;
+}
+@media screen and (max-width: 800px){
+  .footer {
+    height: 6.4rem;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    border-radius: 0px;
+    position: sticky;
+    
+  
+} 
+.footlist{
+  display: none;
+  position: absolute;
+  top: 0.5rem;
+}
+.footcompo{
+  margin:0rem 2rem;
+  font-size: 1.3rem;
+ font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ font-weight: 500;
+  ;
+}
+
+}
