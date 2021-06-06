@@ -5,10 +5,11 @@ import Navlist from "./Navlist";
 import Navdesktop  from "./Navdesktop"
 function Header() {
     
+    
     return (
         <div className="navbar">
             <Logo/>
-            <Navdesktop/>
+            <Navdesktop />
             <Navlist/>
         </div>
         

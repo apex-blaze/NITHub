@@ -8,6 +8,7 @@ function Logo() {
        <img src={logo} alt="logo" className="navlogo"/>
        <h1 className="header-title">NIT<span className="header-span">Hub</span></h1>
        </div>
+       
      
     );
 }

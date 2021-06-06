@@ -1,0 +1,94 @@
+#services{
+    padding-top:5rem;
+    height: 40rem;
+}
+h1{
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+}
+.Services{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height:20rem;
+    background-color: white;
+}
+.Card{
+    height: 15rem;
+    margin:2rem 2rem 15rem  2rem;
+    width: 100%;   
+}
+h2{
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+
+}
+p{
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+}
+
+/* Flip CArd */
+.flip-card {
+
+    background-color: transparent;
+    margin: 0 2.1rem;
+    width: 19rem;
+  height: 20rem;
+    border: 2px solid #00ba8e;
+    border-radius: 5px;
+    perspective: 1000px; 
+    /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    border-radius: 6px;
+
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 3px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(134, 127, 127);
+    align-items: center;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #00ba8e;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+@media screen and (max-width: 960px) {
+    .Services{
+        display: grid;
+        grid-template-columns: 1fr;
+        height:20rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3rem;
+    }
+
+}

@@ -3,11 +3,14 @@ import "./css/Signin.css"
 function Signin() {
     return (
         <div className="signin">
-       <span className="signin-logo"> <i className="fas fa-user fa-7x"></i></span>
-          <h1 className="signin-header">Sign In</h1>
+       {/* <i className="fas fa-user fa-7x signin-logo"></i> */}
+       <i class="fas fa-sign-in-alt signin-logo fa-4x"></i>
+          <h1 className="signin-header">Sign in</h1>
+          <h2 className="signin-header">With</h2>
+
           <button className="signin-button"> Continue with  <i class="fab fa-google"></i></button>
         </div>
     )
 }
 
-export default Signin
+export default Signin;
