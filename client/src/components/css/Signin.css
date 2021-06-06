@@ -1,6 +1,12 @@
 .signin{
+    display: block;
     justify-items: center;
     align-items: center;
+    width: 18rem;
+    position: relative;
+    border: 2.6px solid #00ba8e;
+    border-radius: 4px;
+    margin: 3rem auto;
 }
 .signin-header{
     border-radius: 2px solid #00ba8e;
@@ -14,16 +20,16 @@
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 22px;
-    width: 47%;
+    font-size: 1.3rem;
+    width: 14rem;
     padding: 0.6rem 0;
     box-shadow: 2px 2px;
-    margin:0 auto;
+    margin:0.7rem auto;
 
   }
   .signin-logo{
       color: #00ba8e;
-      display: block;
-      margin: 0 auto;
+      display: flex;
+      margin: 1rem 7rem;
   }
   
