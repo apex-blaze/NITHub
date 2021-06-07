@@ -8,7 +8,7 @@ function Signin() {
           <h1 className="signin-header">Sign in</h1>
           <h2 className="signin-header">With</h2>
 
-          <button className="signin-button"> Continue with  <i class="fab fa-google"></i></button>
+          <button className="signin-button"><a href="/auth/google" >Continue with  <i class="fab fa-google"></i></a></button>
         </div>
     )
 }
