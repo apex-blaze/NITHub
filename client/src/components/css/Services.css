@@ -1,17 +1,32 @@
 #services{
     padding-top:5rem;
     height: 40rem;
-}
-h1{
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: #e2f8f3;
 
 }
+
 .Services{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height:20rem;
-    background-color: white;
+    height:30rem;
 }
+.Services-h1{
+  font-family: 'Trade Winds', cursive;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: #00ba8e;
+}
+.Services-hr{
+  width: 95%;
+  background-color: #00ba8e;
+  height:0.03rem;
+  border-radius: 1px solid #00ba8e;
+}
+
 .Card{
     height: 15rem;
     margin:2rem 2rem 15rem  2rem;
@@ -24,6 +39,7 @@ h2{
 }
 p{
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    padding:10px;
 
 }
 
@@ -31,11 +47,11 @@ p{
 .flip-card {
 
     background-color: transparent;
-    margin: 0 2.1rem;
+    margin: 2rem 3rem;
     width: 19rem;
   height: 20rem;
     border: 2px solid #00ba8e;
-    border-radius: 5px;
+    border-radius: 20px;
     perspective: 1000px; 
     /* Remove this if you don't want the 3D effect */
   }
@@ -48,13 +64,14 @@ p{
     text-align: center;
     transition: transform 1s;
     transform-style: preserve-3d;
-    border-radius: 6px;
-
+    border-radius: 18px;
+    box-shadow: 2px 2px 8px 2px #888888;
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    box-shadow: 4px 4px 8px 4px #888888;
   }
   
   /* Position the front and back side */
@@ -64,7 +81,7 @@ p{
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    border-radius: 3px;
+    border-radius: 18px;
   }
   
   /* Style the front side (fallback if image is missing) */
@@ -72,6 +89,7 @@ p{
     background-color: rgb(134, 127, 127);
     align-items: center;
     color: black;
+    border-radius: 18px;
   }
   
   /* Style the back side */
@@ -81,14 +99,26 @@ p{
     transform: rotateY(180deg);
   }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1200px) {
     .Services{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         height:20rem;
         justify-content: center;
         align-items: center;
         margin-top: 3rem;
     }
+
+}
+
+@media screen and (max-width: 960px) {
+  .Services{
+      display: grid;
+      grid-template-columns: 1fr;
+      height:20rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+  }
 
 }

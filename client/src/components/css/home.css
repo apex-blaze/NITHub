@@ -44,6 +44,10 @@ span{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.green-section{
+    display:grid;
+    grid-template-columns: 1fr 1fr;;
+}
 .arrow{
     height: 18rem;
     width: 25rem;
@@ -70,4 +74,29 @@ span{
         display: grid;
         grid-template-columns: 1fr;
     }
+  
+    .go-green{
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+    .green-section{
+        grid-template-columns: 1fr;
+    }
+    .home-started{
+        background-color: white; /* Green */
+        border: 2px solid black;
+        border-radius: 9px;
+        color: #00ba8e;
+        text-align: center;
+        text-decoration: none;
+        /* display: block; */
+        font-size: 1.3rem;
+        width: 14rem;
+        padding: 0.69rem 0;
+        box-shadow: 2px 2px;
+        margin:7.8rem 4rem ;
+        margin-left: 3rem;
+    
+      }
 }

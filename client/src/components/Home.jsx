@@ -3,6 +3,7 @@ import Signin from "./Signin";
 import "./css/Home.css";
 import mockup from "../images/mock3.png";
 import arrow from "../images/monophy.gif";
+import {Link} from "react-router-dom"
 function Home() {
     return (
         <section id="home">
@@ -19,16 +20,20 @@ function Home() {
 
             </div>
             <div className="right">
-              <Signin/>
+              <Signin/>as=
             </div>
             
           </div>
           <div className="go-green">
-            <div > <img className="mockup" src={mockup}/></div> 
+            <div > <img className="mockup" src={mockup} alt="notificationimage"/></div> 
             <div>
-            <div style={{display:"grid", gridTemplateColumns:"1fr 1fr"}}>
-              <div><img className="arrow" src={arrow} /></div>
-             <div><button className="home-started">Get Started</button></div> 
+            <div className="green-section">
+              <div><img className="arrow" src={arrow} alt="arrow"/></div>
+             <div>
+             <Link to="/register">
+             <button className="home-started">Create Account</button>
+             </Link>
+             </div> 
 
              </div>
              </div>
