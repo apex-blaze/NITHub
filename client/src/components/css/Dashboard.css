@@ -1,11 +1,35 @@
-.Dashboard-down{
-    display: grid;
-    height: 30rem;
-    grid-template-columns: 20rem 40rem 20rem;
-}
+
 .Dashboard-profile{
-    height:10rem;
+    height:14rem;
+    
 }
+.profile{
+    
+    width: 20%;
+    border-radius: 8px;
+    border: 2px solid #00ba8e;
+    margin: 2rem auto;
+}
+.part1{
+    width:80%;
+    height: 40%;
+    border-radius: 8px;
+    margin:1rem auto;
+    border: 2px solid #00ba8e;
+    margin: 2rem auto;
+}
+.submit-button{
+    margin: 1rem auto;
+    background-color: #00ba8e;
+    color: white;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 4px;
+}
+.submit-button:hover{
+    background-color: #00916f;
+}
+
 .part2-header{
     display: flex;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -14,10 +38,69 @@
     justify-content: center;
 
 }
+.part2{
+    display: block;
+}
+.collapse-button {
+    display: inline;
+    width: 30%;
+    border: none;
+    background-color: white;
+    color: black;
+    margin: 0rem 1.6rem;
+  }
+.wrap{
+    width: 42%;
+    display: block;
+    margin: 0 auto;
+}
+  .collapse-content.collapsed {
+    display: none;
+    
+  }
+  
+  .collapsed-content.expanded {
+    display: block;
+
+  }
+  
+  .collapse-button:hover{
+     border-bottom: 2px solid #00ba8e;
+     background-color: #cdf1ea;
+     color: black;
+  }
+
+  .collapse-button:focus{
+    padding:3px 0px;
+   border-bottom: 
+   2px solid #00ba8e;
+}
+.Dashboard-down{
+    display: grid;
+    height: 40rem;
+    grid-template-columns: 18rem 50rem 8rem;
+}
 .dashboard-para{
     display: flex;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
+    margin: 0;
     align-items: center;
     justify-content: center;
+}
+@media screen and (max-width: 960px) {
+    .Dashboard-profile{
+        height:20rem;
+        
+    }
+    .profile{
+        
+        width: 70%;
+        border-radius: 8px;
+        border: 2px solid #00ba8e;
+        margin: 2rem auto;
+    }
+    .Dashboard-down{
+        grid-template-columns: 1fr;
+    }
+
 }
