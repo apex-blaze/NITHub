@@ -5,20 +5,67 @@
 }
 .profile{
     
-    width: 20%;
+    width: 30%;
     border-radius: 8px;
-    border: 2px solid #00ba8e;
-    margin: 2rem auto;
+    /* border: 2px solid #00ba8e; */
+    margin: 1rem auto;
+    margin-bottom: 0;
 }
+.avatar{
+    border-radius: 100%;
+    height:130px;
+    width:130px;
+    display: block;
+    margin: 0 auto;
+}
+.profile-hr{
+    width: 30%;
+    background-color: #00ba8e;
+    height:0.08rem;
+    border-radius: 1.5px solid #00ba8e;
+    display: block;
+    margin: 0 auto;
+  }
+  .profile-hr1{
+    width: 100%;
+    background-color: #00916f;
+    height:1rem;
+border-radius: 1px solid #00916f;
+    display: block;
+    margin: 0 auto;
+  }
 .part1{
     width:80%;
     height: 40%;
     border-radius: 8px;
     margin:1rem auto;
-    border: 2px solid #00ba8e;
+    border: 1px solid #00ba8e;
     margin: 2rem auto;
+    
+}
+.file{
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-file{
+width: 80%;
+outline: none;
+border-radius: 1px solid #00ba8e;
+display: block;
+margin: 1rem auto;
+
+}
+.dashboard-input{
+    width: 90%;
+    outline: none;
+    border-radius: 1px solid #00ba8e;
+    /* height: 10em; */
+    height: 3rem;
+    display: block;
+margin: 1rem auto;
 }
 .submit-button{
+    display: block;
     margin: 1rem auto;
     background-color: #00ba8e;
     color: white;
@@ -43,42 +90,36 @@
 }
 .collapse-button {
     display: inline;
-    width: 30%;
+    width: 40%;
     border: none;
     background-color: white;
     color: black;
-    margin: 0rem 1.6rem;
+    margin: 0rem 2.5rem;
   }
 .wrap{
-    width: 42%;
+    width: 60%;
     display: block;
     margin: 0 auto;
 }
-  .collapse-content.collapsed {
-    display: none;
-    
-  }
-  
-  .collapsed-content.expanded {
-    display: block;
 
-  }
-  
   .collapse-button:hover{
+    padding:4px 0px;
+
      border-bottom: 2px solid #00ba8e;
      background-color: #cdf1ea;
-     color: black;
+     color: #00ba8e;
   }
 
   .collapse-button:focus{
-    padding:3px 0px;
-   border-bottom: 
-   2px solid #00ba8e;
+    padding:4px 0px;
+   border-bottom: 2px solid #00ba8e;
+   color: #00ba8e;
+
 }
 .Dashboard-down{
     display: grid;
     height: 40rem;
-    grid-template-columns: 18rem 50rem 8rem;
+    grid-template-columns: 19rem 40rem 12rem;
 }
 .dashboard-para{
     display: flex;
@@ -89,18 +130,30 @@
 }
 @media screen and (max-width: 960px) {
     .Dashboard-profile{
-        height:20rem;
+        height:14rem;
         
     }
     .profile{
         
         width: 70%;
-        border-radius: 8px;
-        border: 2px solid #00ba8e;
-        margin: 2rem auto;
+
     }
+
+    .profile-hr{
+    display: none;
+      }
     .Dashboard-down{
         grid-template-columns: 1fr;
     }
-
+    .wrap{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    .part1{
+        width:70%;
+        height: 80%;
+   
+    }
+   
 }
