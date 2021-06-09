@@ -24,7 +24,9 @@ function Dashboard() {
               <div className="file">
               <form action="/Submit">
                     <label className="dashboard-para" style={{fontSize:"1.6rem"}} for="Description">Description:</label>
-                      <input  className="dashboard-input" type="text" id="Description" placeholder="Description.." required />
+        <hr className="profile-hr1" />
+
+                      <textarea rows="4" cols="50" className="dashboard-input" type="text" id="Description" placeholder="Description.." required />
 							         <input type="file" name="file" className="dashboard-para dashboard-file" required/>
                 <button className="submit-button">Upload!!</button> 
 </form>
@@ -46,7 +48,11 @@ function Dashboard() {
          </a>
   
            </p>
+
      </div>
+
+     <hr className="profile-hr1" />
+
          <div className="collapse" id="activity">
            <div className="card card-body">
          <p className="dashboard-para">1st Notification:<a href="/Dashboard" alt="1st one" style={{color:"black"}}>hello! I'm First one</a></p>
