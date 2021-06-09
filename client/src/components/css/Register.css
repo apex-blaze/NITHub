@@ -27,6 +27,16 @@ input[type=text], select, textarea {
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
   }
+  input[type=password], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: none;
+    border-bottom: 1.5px solid #00ba8e;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
   input[type=email], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
@@ -40,7 +50,17 @@ input[type=text], select, textarea {
     align-items: center;
     justify-content: center;
   }
-  
+  .register-span{
+    width: 100%; 
+    padding: 8px; 
+    border: none;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
+    display: none;
+    
+  }
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
     background-color: #00ba8e;
@@ -54,15 +74,25 @@ input[type=text], select, textarea {
   
   input[type=text]:focus {
   outline: none;
-  background-color: #e0fcf5;
+  background-color: #e0fcf5;}
+  input[type=password]:focus {
+    outline: none;
+    background-color: #e0fcf5;
 
-}
+  }
   input[type=email]:focus {
-    outline: none;}
+    outline: none;
+    background-color: #e0fcf5;
+  }
 
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
     background-color: #00916f;
+  }
+  input[type=submit]:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
   }
   
   /* Add a background color and some padding around the form */

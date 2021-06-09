@@ -6,9 +6,10 @@
     position: relative;
     border: 2.6px solid #00ba8e;
     border-radius: 4px;
-    margin: 3rem auto;
+    margin: 1.5rem auto;
 }
 .signin-header{
+
     border-radius: 2px solid #00ba8e;
     text-align: center;
 }
@@ -33,5 +34,8 @@
       margin: 1rem 7rem;
   }
   .signin-button :hover{
-      background-color: #0ba17e;
+      color: #0ba17e;
+  }
+  .signin-google{
+      color:white;
   }

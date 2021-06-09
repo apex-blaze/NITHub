@@ -28,19 +28,17 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true,useUnifiedTopology: true });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
-  email:String,
-  firstName: String,
-  lastName:String,
+  fname: String,
+  lname:String,
   password: String,
-  googleId: String,
   branch: String,
-  rollNo: String,
+  rollno: String,
   year: Number,
-  secret: String
+  username:String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -60,21 +58,21 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/dashboard",
-  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo", // added due to G+ Sunset
-  passReqToCallback: true
-},
-function(accessToken, refreshToken, profile, cb) {
-  console.log(profile);
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.CLIENT_ID,
+//   clientSecret: process.env.CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/google/dashboard",
+//   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo", // added due to G+ Sunset
+//   passReqToCallback: true
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   console.log(profile);
 
-  User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    return cb(err, user);
-  });
-}
-));
+//   User.findOrCreate({ googleId: profile.id }, function (err, user) {
+//     return cb(err, user);
+//   });
+// }
+// ));
 
 app.get("/dashboard",function(req,res){
   if(req.isAuthenticated()){
@@ -91,21 +89,46 @@ app.get("/dashboard",function(req,res){
 //   // console.log(56));
 //     passport.authenticate("google", { scope: ["email", "profile"] }));
    //this route brings up the popup
-app.get(
-  "/auth/google",
-  function(req,res){
-    res.send("hello");
-  }
-)
+// app.get(
+//   "/auth/google",
+//   function(req,res){
+//     res.send("hello");
+//   }
+// )
 // Local authentication thro'  "auth code"
-app.get(
-  "/auth/google/dashboard",
-  passport.authenticate("google", { failureRedirect: "/" }),
-  function (req, res) {
-    // Successful authentication, redirect to secrets.
-   console.log("Dashboard dikhao launde ko");
-  }
-);
+// app.get(
+//   "/auth/google/dashboard",
+//   passport.authenticate("google", { failureRedirect: "/" }),
+//   function (req, res) {
+//     // Successful authentication, redirect to secrets.
+//    console.log("Dashboard dikhao launde ko");
+//   }
+// );
+
+app.post("/register", function (req, res) {
+
+  const newUser = {
+    username: req.body.username,
+    fname: req.body.fname,
+    lname: req.body.lname,
+    rollno: req.body.rollno,
+    branch: req.body.branch,
+    year: req.body.year
+  };
+  User.register(newUser,
+    req.body.password,
+    function (err, user) {
+      if (err) {
+        console.log(err);
+        res.send("Register ni hua!!");
+      } else {
+        passport.authenticate("local")(req, res, function () {
+          res.send("Register ho gya!!");
+        });
+      }
+    }
+  );
+});
 
 app.get("/logout", function (req, res) {
   req.logout();
