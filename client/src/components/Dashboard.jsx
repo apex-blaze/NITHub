@@ -73,10 +73,10 @@ function Dashboard() {
          <div className="part3">
 
          </div>
-        </div>
-        <Footer/>
-        </div>
-    )
+</div>
+      <Footer />
+    </div>
+  );
 }
 
 export default Dashboard;

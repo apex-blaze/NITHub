@@ -28,17 +28,20 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser: true,useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/userDB", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
   fname: String,
-  lname:String,
+  lname: String,
   password: String,
   branch: String,
   rollno: String,
   year: Number,
-  username:String
+  username: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -48,12 +51,12 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy()); // local strat
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
     done(err, user);
   });
 });
@@ -74,21 +77,20 @@ passport.deserializeUser(function(id, done) {
 // }
 // ));
 
-app.get("/dashboard",function(req,res){
-  if(req.isAuthenticated()){
+app.get("/dashboard", function (req, res) {
+  if (req.isAuthenticated()) {
     console.log("Show him the dashboard");
-  }else{
+  } else {
     console.log("Jaakr Login Kar");
   }
-})
-
+});
 
 // Google authenticates remotely
 // app.get(
 //   "/auth/google",
 //   // console.log(56));
 //     passport.authenticate("google", { scope: ["email", "profile"] }));
-   //this route brings up the popup
+//this route brings up the popup
 // app.get(
 //   "/auth/google",
 //   function(req,res){
@@ -106,28 +108,24 @@ app.get("/dashboard",function(req,res){
 // );
 
 app.post("/register", function (req, res) {
-
   const newUser = {
     username: req.body.username,
     fname: req.body.fname,
     lname: req.body.lname,
     rollno: req.body.rollno,
     branch: req.body.branch,
-    year: req.body.year
+    year: req.body.year,
   };
-  User.register(newUser,
-    req.body.password,
-    function (err, user) {
-      if (err) {
-        console.log(err);
-        res.send("Register ni hua!!");
-      } else {
-        passport.authenticate("local")(req, res, function () {
-          res.send("Register ho gya!!");
-        });
-      }
+  User.register(newUser, req.body.password, function (err, user) {
+    if (err) {
+      console.log(err);
+      res.send("Register ni hua!!");
+    } else {
+      passport.authenticate("local")(req, res, function () {
+        res.send("Register ho gya!!");
+      });
     }
-  );
+  });
 });
 
 app.get("/logout", function (req, res) {
