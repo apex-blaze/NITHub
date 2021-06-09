@@ -1,0 +1,51 @@
+.footer {
+    height: 8rem;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    border-radius: 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+} 
+.footlist{
+  display: flex;
+  top: 0.5rem;
+  padding: 0.5rem 2rem;
+
+}
+.footcompo{
+  margin:0rem 1rem;
+  font-size: 1.1rem;
+ font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ font-weight: 500;
+  
+}
+a{
+  text-decoration:none;
+  color: white;
+}
+.footlist a:hover{
+color: #00ba8e;
+}
+.footerline{
+  top: 0rem;
+  display: inline;
+  width: 70%;
+}
+.footmobile{
+  display: none;
+  /* visibility: hidden; */
+}
+@media screen and (max-width: 960px){
+ .footlist{
+   display: none;
+ }
+ .footmobile{
+   display: block;
+   visibility: visible;
+ }
+}
