@@ -1,4 +1,4 @@
-import React,{useState,useLayoutEffect} from 'react'
+import React,{useState} from 'react'
 import "./css/Register.css"
 import {Redirect} from "react-router-dom"
 function Register() {
@@ -74,9 +74,9 @@ function Register() {
     <label className="Register-label" for="gmail">Your Gmail</label>
     <input type="email" id="gmail" name="username"  value={email} onChange={(e)=>onChange(e,setEmail)} placeholder="Enter your email" required/>
     <label for="Password">Password</label>
-    <input type="password" id="lname" name="password" onChange={(e)=>onChange(e,setPassword)} placeholder="Password" />
+    <input type="password" id="password" name="password" onChange={(e)=>onChange(e,setPassword)} placeholder="Password" />
     <label for="Confirm password">Confirm password</label>
-    <input type="password" id="lname" name="confirmPassword" onChange={(e)=>onChange(e,setConfirmPassword)} placeholder="Confirm password" />
+    <input type="password" id="confirmPassword" name="confirmPassword" onChange={(e)=>onChange(e,setConfirmPassword)} placeholder="Confirm password" />
     <span id = "message1" className="register-span" style={{color:"red"}} > **Password didn't match </span> 
     
     <input id="submit" type="submit" value="Submit" />
