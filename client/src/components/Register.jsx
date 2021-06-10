@@ -4,6 +4,18 @@ import { useHistory } from "react-router-dom";
 import Ajax from "../apis/ajax";
 function Register() {
   let history = useHistory();
+  const [click, setclick] = useState(false);
+  const[passwordshow, setPasswordshow]=useState(false);
+  const [clickc, setclickc] = useState(false);
+  const[passwordshowc, setPasswordshowc]=useState(false);
+  const passwordvisiblity = () =>{ 
+    setPasswordshow(passwordshow? false : true);
+    setclick(click? false: true);
+  }
+  const passwordvisiblity1 = () =>{ 
+    setPasswordshowc(passwordshowc? false : true);
+    setclickc(clickc? false: true);
+  }
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [rollno, setRollno] = useState("");
@@ -148,16 +160,19 @@ function Register() {
             required
           />
           <label for="Password">Password</label>
+          <i onClick={passwordvisiblity1} style={{marginTop:"2rem"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
           <input
-            type="password"
+            type={passwordshowc? "text":"password"}
             id="lname"
             name="password"
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
           <label for="Confirm password">Confirm password</label>
+          <i onClick={passwordvisiblity} style={{marginTop:"2rem"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
+
           <input
-            type="password"
+            type={passwordshow? "text":"password"}
             id="lname"
             name="confirmPassword"
             onChange={(e) => onChange(e, setConfirmPassword)}

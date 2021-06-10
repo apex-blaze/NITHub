@@ -35,10 +35,11 @@ function Home() {
             <div>
             <h3 className="create-now">Create your Account Now !!!</h3>
               <img className="arrow" src={arrow} alt="arrow" />
-              {/* <Link to="/register">
+              <Link to="/register">
                 <button className="home-started1">Create Account</button>
-              </Link> */}
+              </Link>
             </div>
+            
             <div>
             {/* <h4 className="create-now">Create your Account Now !!!</h4> */}
               <Link to="/register">
