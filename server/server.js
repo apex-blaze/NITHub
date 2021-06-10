@@ -51,8 +51,16 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy()); // local strat
 
+// passport.serializeUser(function (user, done) {
+//   done(null, user._id);
+// });
+
+// passport.serializeUser(User.serializeUser());
+
+// passport.deserializeUser(User.deserializeUser());
 passport.serializeUser(function (user, done) {
-  done(null, user.id);
+  // console.log(user);
+  done(null, user.username);
 });
 
 passport.deserializeUser(function (id, done) {

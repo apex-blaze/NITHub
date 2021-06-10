@@ -42,11 +42,11 @@ function Register() {
           username: email,
           password,
         });
+        console.log(response.status);
+        history.push("/dashboard");
       } catch (err) {
         console.log(err);
       }
-
-      history.push("/dashboard");
     } else {
       console.log("bye");
       e.preventDefault(); // this won't let form submit
@@ -60,7 +60,7 @@ function Register() {
       <hr style={{ backgroundColor: "#00ba8e" }}></hr>
       <div class="container">
         <form action="/register" method="post" onSubmit={handleSubmit}>
-          <label className="Register-label" for="fname">
+          <label className="Register-label" htmlFor="fname">
             First Name
           </label>
           <input
@@ -73,7 +73,7 @@ function Register() {
             required
           />
 
-          <label className="Register-label" for="lname">
+          <label className="Register-label" htmlFor="lname">
             Last Name
           </label>
           <input
@@ -85,7 +85,7 @@ function Register() {
             placeholder="Your last name.."
             required
           />
-          <label for="Roll">Roll No.</label>
+          <label htmlFor="Roll">Roll No.</label>
           <input
             type="text"
             id="Roll"
@@ -96,7 +96,7 @@ function Register() {
             required
           />
 
-          <label className="Register-label" for="Branch">
+          <label className="Register-label" htmlFor="Branch">
             Branch
           </label>
           <select
@@ -118,7 +118,7 @@ function Register() {
             <option value="Material">Material Engineering</option>
             <option value="Architecture">Architecture Engineering</option>
           </select>
-          <label className="Register-label" for="Year">
+          <label className="Register-label" htmlFor="Year">
             Year
           </label>
           <select
@@ -135,19 +135,19 @@ function Register() {
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          <label className="Register-label" for="gmail">
+          <label className="Register-label" htmlFor="gmail">
             Your Gmail
           </label>
           <input
             type="email"
-            id="gmail"
+            id="email"
             name="username"
             value={email}
             onChange={(e) => onChange(e, setEmail)}
             placeholder="Enter your email"
             required
           />
-          <label for="Password">Password</label>
+          <label htmlFor="Password">Password</label>
           <input
             type="password"
             id="lname"
@@ -155,10 +155,10 @@ function Register() {
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
-          <label for="Confirm password">Confirm password</label>
+          <label htmlForr="Confirm password">Confirm password</label>
           <input
             type="password"
-            id="lname"
+            id="password"
             name="confirmPassword"
             onChange={(e) => onChange(e, setConfirmPassword)}
             placeholder="Confirm password"
