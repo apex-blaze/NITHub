@@ -6,12 +6,13 @@
     position: relative;
     border: 2.6px solid #00ba8e;
     border-radius: 4px;
-    margin: 1.5rem auto;
+    margin: 3rem auto;
 }
 .signin-header{
 
     border-radius: 2px solid #00ba8e;
     text-align: center;
+    margin: 1.5rem 0;
 }
 .signin-button {
     background-color: #00ba8e; /* Green */
@@ -26,6 +27,7 @@
     padding: 0.6rem 0;
     box-shadow: 2px 2px;
     margin:0.7rem auto;
+    transition-duration: 0.3s;
 
   }
   .signin-logo{
@@ -33,9 +35,32 @@
       display: flex;
       margin: 1rem 7rem;
   }
-  .signin-button :hover{
-      color: #0ba17e;
+  .signin-button:hover{
+      background-color: #0a9e7c;
+      font-size: 1.32rem;
+   
   }
   .signin-google{
       color:white;
+  }
+  .submit-button {
+    background-color: #00ba8e; /* Green */
+    border: 2px solid #00ba8e;
+    border-radius: 9px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1.3rem;
+    width: 14rem;
+    padding: 0.6rem 0;
+    box-shadow: 2px 2px;
+    margin:0.7rem auto;
+    transition-duration: 0.3s;
+
+  }
+.submit-button:hover{
+      background-color: #0a9e7c;
+      font-size: 1.301rem;
+   
   }
