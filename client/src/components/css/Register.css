@@ -105,9 +105,18 @@ input[type=text], select, textarea {
 
 @media screen and (max-width: 960px) {
     .Register{
-        width: 90%;
+        width: 70%;
         height: 70%;
         margin:0 auto;
     
     }
+    .Register-label-header
+{
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: #00ba8e;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 }

@@ -128,7 +128,39 @@ margin: 1rem auto;
     align-items: center;
     justify-content: center;
 }
-@media screen and (max-width: 960px) {
+
+@media screen and (max-width: 1170px) {
+    .Dashboard-profile{
+        height:14rem;
+        
+    }
+    .profile{
+        
+        width: 70%;
+
+    }
+
+    .profile-hr{
+    display: none;
+      }
+    .Dashboard-down{
+        grid-template-columns: 1fr 1fr;
+    }
+    .wrap{
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    .part1{
+        width:70%;
+        height: 60%;
+   
+    }
+   
+}
+
+
+@media screen and (max-width: 900px) {
     .Dashboard-profile{
         height:14rem;
         
@@ -151,8 +183,8 @@ margin: 1rem auto;
         margin: 0 auto;
     }
     .part1{
-        width:70%;
-        height: 80%;
+        width:60%;
+        height: 75%;
    
     }
    

@@ -8,6 +8,7 @@ function Header() {
     
     return (
         <div className="navbar">
+
             <Logo/>
             <Navdesktop />
             <Navlist/>

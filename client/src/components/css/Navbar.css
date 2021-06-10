@@ -51,6 +51,7 @@
   color: #00ba8e;
 }
 .navlist{
+  display: none;
   visibility: hidden;
 }
 a{
@@ -111,6 +112,7 @@ color: #00ba8e;
   }
 .navlist{
   visibility: visible;
+  display: block;
 }
 .navdesktop{
   /* visibility: hidden; */

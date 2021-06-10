@@ -1,10 +1,10 @@
 
 .home-container{    
     padding-top:5rem;
+    height: 33rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 26rem;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .left{
     display: inline;
@@ -41,62 +41,69 @@ span{
     width:100%;
     height:15rem;
     background-color:#00ba8e ;
-    display: grid;
+    display:grid;
     grid-template-columns: 1fr 1fr;
+
+  
 }
 .green-section{
     display:grid;
-    grid-template-columns: 1fr 1fr;;
+    grid-template-columns: 1fr 1fr;
 }
 .arrow{
-    height: 18rem;
-    width: 25rem;
-    margin-bottom: 0;
+    height: 20rem;
+    width: 22rem;
+    display: flex;
+    margin-top: -5.7rem;
+    padding-top: 3rem;
+    padding-bottom: 10rem;
 }
 .home-started{
-    background-color: white; /* Green */
-    border: 2px solid black;
-    border-radius: 9px;
-    color: #00ba8e;
+    background-color: #00c597; /* Green */
+    border: 1.8px solid white;
+    border-radius: 0.8rem;
+    color: white;
     text-align: center;
     text-decoration: none;
     /* display: block; */
-    font-size: 1.3rem;
-    width: 14rem;
-    padding: 0.69rem 0;
-    box-shadow: 2px 2px;
-    margin:7.8rem 4rem ;
+    font-size: 1.5rem;
+    width: 12rem;
+    padding: 0.7rem;
+    padding-top: 0.3rem;
+
+    font-weight: 360;
+    margin:7rem 4rem ;
     margin-left: 0rem;
+    transition-duration: 0.4s;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.create-now{
+    color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    margin: 3rem auto;
+}
+  
+  .home-started:hover{
+      background-color: #0a9e7c;
+      color: white;
+    border: 1.9px solid white;
 
   }
-@media screen and (max-width: 960px) {
-    .home-container{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-  
-    .go-green{
-        display: grid;
 
-        grid-template-columns: 1fr;
-    }
-    .green-section{
-        grid-template-columns: 1fr;
-    }
-    .home-started{
-        background-color: white; /* Green */
-        border: 2px solid black;
-        border-radius: 9px;
-        color: #00ba8e;
-        text-align: center;
-        text-decoration: none;
-        /* display: block; */
-        font-size: 1.3rem;
-        width: 14rem;
-        padding: 0.69rem 0;
-        box-shadow: 2px 2px;
-        margin:7.8rem 4rem ;
-        margin-left: 3rem;
-    
-      }
+
+  @media screen and (max-width: 960px) {
+      
+.home-container{    
+    grid-template-columns: 1fr;
+    height: 23rem;
+
 }
+.go-green{
+    grid-template-columns: 1fr;
+
+  
+}
+.green-section{
+    grid-template-columns: 1fr;
+}
+  }
