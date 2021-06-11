@@ -51,8 +51,16 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy()); // local strat
 
+// passport.serializeUser(function (user, done) {
+//   done(null, user._id);
+// });
+
+// passport.serializeUser(User.serializeUser());
+
+// passport.deserializeUser(User.deserializeUser());
 passport.serializeUser(function (user, done) {
-  done(null, user.id);
+  // console.log(user);
+  done(null, user.username);
 });
 
 passport.deserializeUser(function (id, done) {
@@ -77,14 +85,6 @@ passport.deserializeUser(function (id, done) {
 // }
 // ));
 
-app.get("/dashboard", function (req, res) {
-  if (req.isAuthenticated()) {
-    console.log("Show him the dashboard");
-  } else {
-    console.log("Jaakr Login Kar");
-  }
-});
-
 // Google authenticates remotely
 // app.get(
 //   "/auth/google",
@@ -106,6 +106,29 @@ app.get("/dashboard", function (req, res) {
 //    console.log("Dashboard dikhao launde ko");
 //   }
 // );
+
+app.get("/dashboard", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.send("He is authenticated");
+  } else {
+    res.send("Not authenticated");
+  }
+});
+
+app.post("/login", passport.authenticate("local"), function (req, res) {
+  const user = {
+    username: req.body.username,
+    password: req.body.password,
+  };
+
+  req.login(user, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("show him the dashboard");
+    }
+  });
+});
 
 app.post("/register", function (req, res) {
   const newUser = {
