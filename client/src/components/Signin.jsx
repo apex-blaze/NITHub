@@ -6,6 +6,12 @@ function Signin() {
   let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [click, setclick] = useState(false);
+  const[passwordshow, setPasswordshow]=useState(false);
+  const passwordvisiblity = () =>{ 
+    setPasswordshow(passwordshow? false : true);
+    setclick(click? false: true);
+  }
   function onChange(e, fun) {
     fun(e.target.value);
   }
@@ -55,7 +61,7 @@ function Signin() {
             <div class="modal-body">
               <form action="/login" method="post" onSubmit={handleSubmit}>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
@@ -71,9 +77,9 @@ function Signin() {
                   </small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
-                    type="password"
+                     type={passwordshow? "text":"password"}
                     name="password"
                     class="form-control"
                     id="exampleInputPassword1"
@@ -87,9 +93,10 @@ function Signin() {
                     type="checkbox"
                     class="form-check-input"
                     id="exampleCheck1"
+                    onClick={passwordvisiblity}
                   />
-                  <label className="form-check-label" for="exampleCheck1">
-                    Check me out
+                  <label className="form-check-label" htmlFor="exampleCheck1">
+                    show password
                   </label>
                 </div>
                 <span
@@ -132,7 +139,7 @@ function Signin() {
             <div class="modal-body">
               <form action="/dashboard">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
@@ -148,9 +155,9 @@ function Signin() {
                   </small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
-                    type="password"
+                    type={passwordshow? "text":"password"}
                     name="password"
                     class="form-control"
                     id="exampleInputPassword1"
@@ -164,9 +171,10 @@ function Signin() {
                     type="checkbox"
                     class="form-check-input"
                     id="exampleCheck1"
+                    onClick={passwordvisiblity}
                   />
-                  <label className="form-check-label" for="exampleCheck1">
-                    Check me out
+                  <label className="form-check-label" htmlFor="exampleCheck1">
+                    show password
                   </label>
                 </div>
 
