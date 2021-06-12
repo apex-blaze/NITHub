@@ -160,7 +160,12 @@ function Register() {
             required
           />
           <label htmlFor="Password">Password</label>
+<<<<<<< HEAD
 <div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
+=======
+          <i onClick={passwordvisiblity1} style={{marginTop:"2rem"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
+
+>>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
           <input
             type={passwordshowc? "text":"password"}
             id="lname"
@@ -168,10 +173,15 @@ function Register() {
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
+<<<<<<< HEAD
           <i onClick={passwordvisiblity1} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px" , backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
 </div>
           <label htmlFor="Confirm password">Confirm password</label>
           <div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
+=======
+          <label htmlFor="Confirm password">Confirm password</label>
+          <i onClick={passwordvisiblity} style={{marginTop:"2rem"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
+>>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
 
           <input
             type={passwordshow? "text":"password"}

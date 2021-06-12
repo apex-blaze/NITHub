@@ -15,11 +15,6 @@ function Signin() {
   function onChange(e, fun) {
     fun(e.target.value);
   }
-  function onSubmit() {
-  //  history.go(0);
-    // alert("Loading Dashboard wait");
-}
- const[submit,setsubmit]=useState(false);
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
     e.preventDefault();
@@ -66,7 +61,7 @@ function Signin() {
             <div class="modal-body">
               <form action="/login" method="post" onSubmit={handleSubmit}>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
@@ -82,7 +77,7 @@ function Signin() {
                   </small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                      type={passwordshow? "text":"password"}
                     name="password"
@@ -100,7 +95,7 @@ function Signin() {
                     id="exampleCheck1"
                     onClick={passwordvisiblity}
                   />
-                  <label className="form-check-label" for="exampleCheck1">
+                  <label className="form-check-label" htmlFor="exampleCheck1">
                     show password
                   </label>
                 </div>
@@ -144,7 +139,7 @@ function Signin() {
             <div class="modal-body">
               <form action="/dashboard">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
@@ -160,7 +155,7 @@ function Signin() {
                   </small>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword2">Password</label>
+                  <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                     type={passwordshow? "text":"password"}
                     name="password"
@@ -175,10 +170,10 @@ function Signin() {
                   <input
                     type="checkbox"
                     class="form-check-input"
-                    id="exampleCheck2"
+                    id="exampleCheck1"
                     onClick={passwordvisiblity}
                   />
-                  <label className="form-check-label" for="exampleCheck1">
+                  <label className="form-check-label" htmlFor="exampleCheck1">
                     show password
                   </label>
                 </div>
