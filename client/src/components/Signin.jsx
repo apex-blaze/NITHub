@@ -15,7 +15,6 @@ function Signin() {
   function onChange(e, fun) {
     fun(e.target.value);
   }
-
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
     e.preventDefault();
@@ -28,6 +27,7 @@ function Signin() {
       if (response.status === 200) {
         alert.style.display = "none";
         history.push("/dashboard");
+        history.go(0);
       }
     } catch (err) {
       console.log(err);
@@ -120,13 +120,13 @@ function Signin() {
         class="modal fade"
         id="faculty"
         tabindex="-1"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="exampleModalLabel1"
         aria-hidden="true"
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
+              <h4 class="modal-title" id="exampleModalLabel1">
                 Login as Faculty
               </h4>
               <button
@@ -144,13 +144,13 @@ function Signin() {
                     type="email"
                     name="username"
                     class="form-control"
-                    id="exampleInputEmail1"
+                    id="exampleInputEmail2"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     onChange={(e) => onChange(e, setEmail)}
                     required
                   />
-                  <small id="emailHelp" class="form-text text-muted">
+                  <small id="emailHelp1" class="form-text text-muted">
                     We'll never share your email with anyone else.
                   </small>
                 </div>
@@ -160,7 +160,7 @@ function Signin() {
                     type={passwordshow? "text":"password"}
                     name="password"
                     class="form-control"
-                    id="exampleInputPassword1"
+                    id="exampleInputPassword2"
                     placeholder="Password"
                     onChange={(e) => onChange(e, setPassword)}
                     required

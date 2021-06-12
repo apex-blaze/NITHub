@@ -51,15 +51,7 @@ const User = new mongoose.model("User", userSchema);
 
 passport.use(User.createStrategy()); // local strat
 
-// passport.serializeUser(function (user, done) {
-//   done(null, user._id);
-// });
-
-// passport.serializeUser(User.serializeUser());
-
-// passport.deserializeUser(User.deserializeUser());
 passport.serializeUser(function (user, done) {
-  // console.log(user);
   done(null, user.username);
 });
 
@@ -69,43 +61,6 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-// passport.use(new GoogleStrategy({
-//   clientID: process.env.CLIENT_ID,
-//   clientSecret: process.env.CLIENT_SECRET,
-//   callbackURL: "http://localhost:3000/auth/google/dashboard",
-//   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo", // added due to G+ Sunset
-//   passReqToCallback: true
-// },
-// function(accessToken, refreshToken, profile, cb) {
-//   console.log(profile);
-
-//   User.findOrCreate({ googleId: profile.id }, function (err, user) {
-//     return cb(err, user);
-//   });
-// }
-// ));
-
-// Google authenticates remotely
-// app.get(
-//   "/auth/google",
-//   // console.log(56));
-//     passport.authenticate("google", { scope: ["email", "profile"] }));
-//this route brings up the popup
-// app.get(
-//   "/auth/google",
-//   function(req,res){
-//     res.send("hello");
-//   }
-// )
-// Local authentication thro'  "auth code"
-// app.get(
-//   "/auth/google/dashboard",
-//   passport.authenticate("google", { failureRedirect: "/" }),
-//   function (req, res) {
-//     // Successful authentication, redirect to secrets.
-//    console.log("Dashboard dikhao launde ko");
-//   }
-// );
 
 app.get("/dashboard", function (req, res) {
   if (req.isAuthenticated()) {
@@ -114,6 +69,15 @@ app.get("/dashboard", function (req, res) {
     res.send("Not authenticated");
   }
 });
+
+app.get("/notices",function(req,res){
+
+})
+
+app.post("/notices",function(req,res){
+  console.log(req.body.formData);
+  res.send("Ok thnx");
+})
 
 app.post("/login", passport.authenticate("local"), function (req, res) {
   const user = {

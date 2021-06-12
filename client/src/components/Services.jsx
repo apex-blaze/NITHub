@@ -9,7 +9,7 @@ function Services() {
       <h1 className="Services-h1">Services</h1>
       <hr className="Services-hr"></hr>
       <div className="Services">
-        {/* <div className="Card"> */}
+        <div className="Card">
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -35,6 +35,8 @@ function Services() {
             </div>
           </div>
         </div>
+        </div>
+        <div className="Card">
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -61,6 +63,8 @@ function Services() {
             </div>
           </div>
         </div>
+        </div>
+        <div className="Card">
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
@@ -86,6 +90,7 @@ function Services() {
             </div>
           </div>
         </div>
+      </div>
       </div>
       {/* </div> */}
     </section>

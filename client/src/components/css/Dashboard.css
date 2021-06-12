@@ -36,7 +36,7 @@ border-radius: 1px solid #00916f;
   }
 .part1{
     width:80%;
-    height: 40%;
+    height: 45%;
     border-radius: 8px;
     margin:1rem auto;
     border: 1px solid #00ba8e;
@@ -48,17 +48,26 @@ border-radius: 1px solid #00916f;
     flex-direction: column;
 }
 .dashboard-file{
-width: 80%;
+width: 100%;
 outline: none;
 border-radius: 1px solid #00ba8e;
 display: block;
-margin: 1rem auto;
+padding: 0rem 1rem;
 
 }
 .dashboard-input{
-    width: 90%;
+    width: 90% !important;
     outline: none;
     border-radius: 1px solid #00ba8e;
+    /* height: 10em; */
+    height: 3rem;
+    display: block;
+margin: 1rem auto;
+}
+.dashboard-title{
+    width: 87% !important;
+    outline: none;
+    border-radius: 1px solid #00ba8e !important;
     /* height: 10em; */
     height: 3rem;
     display: block;
