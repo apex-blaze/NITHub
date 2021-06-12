@@ -1,66 +1,75 @@
-.signin{
-    display: block;
-    justify-items: center;
-    align-items: center;
-    width: 18rem;
-    position: relative;
-    border: 2.6px solid #00ba8e;
-    border-radius: 4px;
-    margin: 3rem auto;
+.signin {
+  display: block;
+  justify-items: center;
+  align-items: center;
+  width: 18rem;
+  position: relative;
+  border: 2.6px solid #00ba8e;
+  border-radius: 4px;
+  margin: 3rem auto;
 }
-.signin-header{
-
-    border-radius: 2px solid #00ba8e;
-    text-align: center;
-    margin: 1.5rem 0;
+.signinhidden{
+  display: none;
+}
+.signin-header {
+  border-radius: 2px solid #00ba8e;
+  text-align: center;
+  margin: 1.5rem 0;
 }
 .signin-button {
-    background-color: #00ba8e; /* Green */
-    border: 2px solid #00ba8e;
-    border-radius: 9px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 1.3rem;
-    width: 14rem;
-    padding: 0.6rem 0;
-    box-shadow: 2px 2px;
-    margin:0.7rem auto;
-    transition-duration: 0.3s;
+  background-color: #00ba8e; /* Green */
+  border: 2px solid #00ba8e;
+  border-radius: 9px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1.3rem;
+  width: 14rem;
+  padding: 0.6rem 0;
+  box-shadow: 2px 2px;
+  margin: 0.7rem auto;
+  transition-duration: 0.3s;
+}
+.signin-logo {
+  color: #00ba8e;
+  display: flex;
+  margin: 1rem 7rem;
+}
+.signin-button:hover {
+  background-color: #0a9e7c;
+  font-size: 1.32rem;
+}
+.signin-google {
+  color: white;
+}
+.submit-button {
+  background-color: #00ba8e; /* Green */
+  border: 2px solid #00ba8e;
+  border-radius: 9px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1.3rem;
+  width: 14rem;
+  padding: 0.6rem 0;
+  box-shadow: 2px 2px;
+  margin: 0.7rem auto;
+  transition-duration: 0.3s;
+}
+.submit-button:hover {
+  background-color: #0a9e7c;
+  font-size: 1.301rem;
+}
 
-  }
-  .signin-logo{
-      color: #00ba8e;
-      display: flex;
-      margin: 1rem 7rem;
-  }
-  .signin-button:hover{
-      background-color: #0a9e7c;
-      font-size: 1.32rem;
-   
-  }
-  .signin-google{
-      color:white;
-  }
-  .submit-button {
-    background-color: #00ba8e; /* Green */
-    border: 2px solid #00ba8e;
-    border-radius: 9px;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 1.3rem;
-    width: 14rem;
-    padding: 0.6rem 0;
-    box-shadow: 2px 2px;
-    margin:0.7rem auto;
-    transition-duration: 0.3s;
-
-  }
-.submit-button:hover{
-      background-color: #0a9e7c;
-      font-size: 1.301rem;
-   
-  }
+.signin-span {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  margin-bottom: 16px;
+  /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
+  display: none;
+}

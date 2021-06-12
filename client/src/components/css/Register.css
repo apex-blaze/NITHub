@@ -3,7 +3,9 @@
     height: 75%;
     margin:0 auto;
 
+    
 }
+
 .Register-label
 {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -72,7 +74,7 @@ input[type=text], select, textarea {
     cursor: pointer;
     margin: 0 auto;
   }
-  
+ 
   input[type=text]:focus {
   outline: none;
   background-color: #e0fcf5;}

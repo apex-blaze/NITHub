@@ -54,11 +54,11 @@ function Register() {
           username: email,
           password,
         });
+        console.log(response.status);
+        history.push("/dashboard");
       } catch (err) {
         console.log(err);
       }
-
-      history.push("/dashboard");
     } else {
       console.log("bye");
       e.preventDefault(); // this won't let form submit
@@ -72,7 +72,7 @@ function Register() {
       <hr style={{ backgroundColor: "#00ba8e" }}></hr>
       <div class="container">
         <form action="/register" method="post" onSubmit={handleSubmit}>
-          <label className="Register-label" for="fname">
+          <label className="Register-label" htmlFor="fname">
             First Name
           </label>
           <input
@@ -85,7 +85,7 @@ function Register() {
             required
           />
 
-          <label className="Register-label" for="lname">
+          <label className="Register-label" htmlFor="lname">
             Last Name
           </label>
           <input
@@ -97,7 +97,7 @@ function Register() {
             placeholder="Your last name.."
             required
           />
-          <label for="Roll">Roll No.</label>
+          <label htmlFor="Roll">Roll No.</label>
           <input
             type="text"
             id="Roll"
@@ -108,7 +108,7 @@ function Register() {
             required
           />
 
-          <label className="Register-label" for="Branch">
+          <label className="Register-label" htmlFor="Branch">
             Branch
           </label>
           <select
@@ -130,7 +130,7 @@ function Register() {
             <option value="Material">Material Engineering</option>
             <option value="Architecture">Architecture Engineering</option>
           </select>
-          <label className="Register-label" for="Year">
+          <label className="Register-label" htmlFor="Year">
             Year
           </label>
           <select
@@ -147,20 +147,20 @@ function Register() {
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-          <label className="Register-label" for="gmail">
+          <label className="Register-label" htmlFor="gmail">
             Your Gmail
           </label>
           <input
             type="email"
-            id="gmail"
+            id="email"
             name="username"
             value={email}
             onChange={(e) => onChange(e, setEmail)}
             placeholder="Enter your email"
             required
           />
-          <label for="Password">Password</label>
-          <i onClick={passwordvisiblity1} style={{marginTop:"2rem"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
+          <label htmlFor="Password">Password</label>
+<div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
           <input
             type={passwordshowc? "text":"password"}
             id="lname"
@@ -168,8 +168,10 @@ function Register() {
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
-          <label for="Confirm password">Confirm password</label>
-          <i onClick={passwordvisiblity} style={{marginTop:"2rem"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
+          <i onClick={passwordvisiblity1} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px" , backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
+</div>
+          <label htmlFor="Confirm password">Confirm password</label>
+          <div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
 
           <input
             type={passwordshow? "text":"password"}
@@ -178,6 +180,8 @@ function Register() {
             onChange={(e) => onChange(e, setConfirmPassword)}
             placeholder="Confirm password"
           />
+          <i onClick={passwordvisiblity} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px",backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
+</div>
           <span
             id="message1"
             className="register-span"

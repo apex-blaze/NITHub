@@ -4,6 +4,7 @@ import "./css/Home.css";
 import mockup from "../images/mock3.png";
 import arrow from "../images/monophy.gif";
 import { Link } from "react-router-dom";
+import start from "../images/start.png"
 function Home() {
   return (
     <section id="home">
@@ -29,6 +30,7 @@ function Home() {
         <div>
           {" "}
           <img className="mockup" src={mockup} alt="notificationimage" />
+          <img className="start" src={start} alt="startimage"/>
         </div>
         <div>
           <div className="green-section">
