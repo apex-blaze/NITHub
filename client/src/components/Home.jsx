@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <section id="home">
-    
       <div className="home-container">
         <div className="left">
           <h1>
@@ -16,13 +15,10 @@ function Home() {
           <h2>
             Now get all the <span>notifications</span> in one place!!{" "}
             <i className="fas fa-bell fa-1x" style={{ color: "#00ba8e" }}></i>
-          
           </h2>
         </div>
         <div className="right">
-        
           <Signin />
-          
         </div>
       </div>
       <div className="go-green">
@@ -33,15 +29,15 @@ function Home() {
         <div>
           <div className="green-section">
             <div>
-            <h3 className="create-now">Create your Account Now !!!</h3>
+              <h3 className="create-now">Create your Account Now !!!</h3>
               <img className="arrow" src={arrow} alt="arrow" />
               <Link to="/register">
                 <button className="home-started1">Create Account</button>
               </Link>
             </div>
-            
+
             <div>
-            {/* <h4 className="create-now">Create your Account Now !!!</h4> */}
+              {/* <h4 className="create-now">Create your Account Now !!!</h4> */}
               <Link to="/register">
                 <button className="home-started">Create Account</button>
               </Link>
