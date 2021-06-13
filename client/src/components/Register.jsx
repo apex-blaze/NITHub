@@ -5,17 +5,17 @@ import Ajax from "../apis/ajax";
 function Register() {
   let history = useHistory();
   const [click, setclick] = useState(false);
-  const[passwordshow, setPasswordshow]=useState(false);
+  const [passwordshow, setPasswordshow] = useState(false);
   const [clickc, setclickc] = useState(false);
-  const[passwordshowc, setPasswordshowc]=useState(false);
-  const passwordvisiblity = () =>{ 
-    setPasswordshow(passwordshow? false : true);
-    setclick(click? false: true);
-  }
-  const passwordvisiblity1 = () =>{ 
-    setPasswordshowc(passwordshowc? false : true);
-    setclickc(clickc? false: true);
-  }
+  const [passwordshowc, setPasswordshowc] = useState(false);
+  const passwordvisiblity = () => {
+    setPasswordshow(passwordshow ? false : true);
+    setclick(click ? false : true);
+  };
+  const passwordvisiblity1 = () => {
+    setPasswordshowc(passwordshowc ? false : true);
+    setclickc(clickc ? false : true);
+  };
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [rollno, setRollno] = useState("");
@@ -160,38 +160,46 @@ function Register() {
             required
           />
           <label htmlFor="Password">Password</label>
-<<<<<<< HEAD
-<div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
-=======
-          <i onClick={passwordvisiblity1} style={{marginTop:"2rem"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
+          <i
+            onClick={passwordvisiblity1}
+            style={{ marginTop: "2rem" }}
+            className={clickc ? "fas fa-eye" : "fas fa-eye-slash"}
+          />
 
->>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
           <input
-            type={passwordshowc? "text":"password"}
+            type={passwordshowc ? "text" : "password"}
             id="lname"
             name="password"
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
-<<<<<<< HEAD
-          <i onClick={passwordvisiblity1} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px" , backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
-</div>
           <label htmlFor="Confirm password">Confirm password</label>
-          <div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
-=======
-          <label htmlFor="Confirm password">Confirm password</label>
-          <i onClick={passwordvisiblity} style={{marginTop:"2rem"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
->>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
+          <i
+            onClick={passwordvisiblity}
+            style={{ marginTop: "2rem" }}
+            className={click ? "fas fa-eye" : "fas fa-eye-slash"}
+          />
 
           <input
-            type={passwordshow? "text":"password"}
+            type={passwordshow ? "text" : "password"}
             id="lname"
             name="confirmPassword"
             onChange={(e) => onChange(e, setConfirmPassword)}
             placeholder="Confirm password"
           />
-          <i onClick={passwordvisiblity} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px",backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
-</div>
+          <i
+            onClick={passwordvisiblity}
+            style={{
+              marginTop: "6px",
+              marginBottom: "1rem",
+              paddingTop: "1.4rem",
+              marginLeft: "0rem",
+              paddingLeft: "7px",
+              backgroundColor: "#e0fcf5",
+              borderBottom: "1.5px solid #00ba8e",
+            }}
+            className={click ? "fas fa-eye" : "fas fa-eye-slash"}
+          />
           <span
             id="message1"
             className="register-span"

@@ -5,6 +5,8 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
+const fileUpload = require("express-fileupload");
+const multer = require("multer");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -27,6 +29,7 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(fileUpload());
 
 mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
@@ -44,10 +47,17 @@ const userSchema = new mongoose.Schema({
   username: String,
 });
 
+const noticeSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  pdf: String,
+});
+
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User", userSchema);
+const Notice = new mongoose.model("Notice", noticeSchema);
 
 passport.use(User.createStrategy()); // local strat
 
@@ -61,7 +71,6 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-
 app.get("/dashboard", function (req, res) {
   if (req.isAuthenticated()) {
     res.send("He is authenticated");
@@ -70,14 +79,24 @@ app.get("/dashboard", function (req, res) {
   }
 });
 
-app.get("/notices",function(req,res){
+app.get("/notices", function (req, res) {});
 
-})
-
-app.post("/notices",function(req,res){
-  console.log(req.body.formData);
+app.post("/notices", function (req, res) {
+  console.log(req.body);
+  console.log(req.files);
+  let file = new Notice({
+    title: req.body.title,
+    description: req.body.description,
+    pdf: req.files.pdf.data.toString("base64"),
+  });
+  file.save(function (err, notice) {
+    if (err) console.log(err);
+    else {
+      console.log(notice);
+    }
+  });
   res.send("Ok thnx");
-})
+});
 
 app.post("/login", passport.authenticate("local"), function (req, res) {
   const user = {

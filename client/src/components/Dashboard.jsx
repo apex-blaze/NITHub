@@ -1,43 +1,51 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import "./css/Dashboard.css";
 import img from "../images/2.png";
 import Ajax from "../apis/ajax";
 function Dashboard() {
-  const[title,settitle]=useState("");
-  const[description,setdescription]=useState("");
-  const [file,setFile] = useState(null);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFile] = useState(null);
   function onChange(e, fun) {
     fun(e.target.value);
   }
 
-  function handleFile(e){
+  function handleFile(e) {
     e.preventDefault();
     setFile(e.target.files[0]);
   }
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
 
-    formData.append("pdf",file);
-    formData.append("title",title);
-    formData.append("description",description);
+    formData.append("pdf", file);
+    formData.append("title", title);
+    formData.append("description", description);
+    // for (let key of formData.entries()) {
+    //   console.log(key[0] + ", " + key[1]);
+    // }
+    const config = {
+      headers: { "Content-Type": "multipart/form-data" },
+    };
 
-    const respo = await Ajax.post(`/notices`,{
-      formData
-    });
-    if(respo.status === 200){
+    const respo = await Ajax.post(`/notices`, formData, config);
+    if (respo.status === 200) {
       console.log("Notice submitted successfully");
-    }else{
+    } else {
       console.log("Error while submitting notice");
     }
   }
 
-  useEffect(async ()=>{
-    const response = await Ajax.get(`/notices`);
-    // const data = response.data;
-  },[]);
+  useEffect(() => {
+    async function fetchNotices() {
+      const response = await Ajax.get(`/notices`);
+      console.log(response);
+      // const data = response.data;
+    }
+    fetchNotices();
+  }, []);
 
   return (
     <div className="Dashboard">
@@ -65,7 +73,12 @@ function Dashboard() {
       <div className="Dashboard-down">
         <div className="part1">
           <div className="file">
-            <form action="/notices" method="POST" onSubmit={handleSubmit} enctype="multipart/form-data">
+            <form
+              action="/notices"
+              method="POST"
+              onSubmit={handleSubmit}
+              enctype="multipart/form-data"
+            >
               <label
                 className="dashboard-para"
                 style={{ fontSize: "1.6rem" }}
@@ -80,7 +93,7 @@ function Dashboard() {
                 type="text"
                 id="Title"
                 placeholder="Title.."
-                onChange={(e)=>onChange(e, settitle)}
+                onChange={(e) => onChange(e, setTitle)}
                 required
               />
               <textarea
@@ -91,8 +104,7 @@ function Dashboard() {
                 type="text"
                 id="Description"
                 placeholder="Description.."
-                onChange={(e)=>onChange(e, setdescription)}
-
+                onChange={(e) => onChange(e, setDescription)}
                 required
               />
               <input
