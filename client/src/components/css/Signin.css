@@ -8,6 +8,9 @@
   border-radius: 4px;
   margin: 3rem auto;
 }
+.signinhidden{
+  display: none;
+}
 .signin-header {
   border-radius: 2px solid #00ba8e;
   text-align: center;

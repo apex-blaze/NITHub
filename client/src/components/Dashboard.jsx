@@ -1,8 +1,44 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Footer from "./Footer";
 import "./css/Dashboard.css";
 import img from "../images/2.png";
+import Ajax from "../apis/ajax";
 function Dashboard() {
+  const[title,settitle]=useState("");
+  const[description,setdescription]=useState("");
+  const [file,setFile] = useState(null);
+  function onChange(e, fun) {
+    fun(e.target.value);
+  }
+
+  function handleFile(e){
+    e.preventDefault();
+    setFile(e.target.files[0]);
+  }
+
+  async function handleSubmit(e){
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("pdf",file);
+    formData.append("title",title);
+    formData.append("description",description);
+
+    const respo = await Ajax.post(`/notices`,{
+      formData
+    });
+    if(respo.status === 200){
+      console.log("Notice submitted successfully");
+    }else{
+      console.log("Error while submitting notice");
+    }
+  }
+
+  useEffect(async ()=>{
+    const response = await Ajax.get(`/notices`);
+    // const data = response.data;
+  },[]);
+
   return (
     <div className="Dashboard">
       <div className="Dashboard-profile">
@@ -29,7 +65,7 @@ function Dashboard() {
       <div className="Dashboard-down">
         <div className="part1">
           <div className="file">
-            <form action="/Submit">
+            <form action="/notices" method="POST" onSubmit={handleSubmit} enctype="multipart/form-data">
               <label
                 className="dashboard-para"
                 style={{ fontSize: "1.6rem" }}
@@ -38,20 +74,32 @@ function Dashboard() {
                 Description:
               </label>
               <hr className="profile-hr1" />
-
+              <input
+                className="dashboard-title"
+                name="title"
+                type="text"
+                id="Title"
+                placeholder="Title.."
+                onChange={(e)=>onChange(e, settitle)}
+                required
+              />
               <textarea
                 rows="4"
                 cols="50"
                 className="dashboard-input"
+                name="description"
                 type="text"
                 id="Description"
                 placeholder="Description.."
+                onChange={(e)=>onChange(e, setdescription)}
+
                 required
               />
               <input
                 type="file"
                 name="file"
                 className="dashboard-para dashboard-file"
+                onChange={handleFile}
                 required
               />
               <button className="submit-button">Upload!!</button>

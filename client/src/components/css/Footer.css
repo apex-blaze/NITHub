@@ -1,25 +1,33 @@
 .footer {
-    height: 8rem;
+    height: 6rem;
     width: 100%;
     left: 0px;
     top: 0px;
     background-color: black;
     border-radius: 0px;
     position: relative;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
+    grid-template-columns: 1fr;
 
 } 
+.footer-up{
+  display: block;
+  margin: 0rem auto;
+  margin-bottom: -3rem;
+}
 .footlist{
   display: flex;
-  top: 0.5rem;
-  padding: 0.5rem 2rem;
+  top: 0rem;
+  padding: 0rem 0rem;
+  display: grid;
+   grid-template-columns:25rem 15rem 25rem;
 
 }
 .footcompo{
-  margin:0rem 1rem;
-  font-size: 1.1rem;
+  margin:0rem 1.5rem;
+  font-size: 1.2rem;
  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
  font-weight: 500;
   
@@ -40,6 +48,45 @@ color: #00ba8e;
   display: none;
   /* visibility: hidden; */
 }
+.footer-hr{
+ width: 100% !important;
+ color: #00ba8e;
+}
+.footer-down{
+  display: none;
+}
+.footer-icons{
+  width: 40%;
+}
+.footer-cc{
+ color: #00ba8e;
+ font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+ display: block;
+  margin: 0 auto;
+ font-size: 1.3rem;
+}
+.footer-contact{
+  display: block;
+  margin: 0 auto;
+}
+.foot-icons{
+  width:70%;
+  display:block;
+  margin-left: 8rem;
+  
+}
+@media screen and (max-width: 1200px){
+  .footlist{
+    grid-template-columns: 1fr 1fr 1fr;
+    
+  }
+  .foot-icons{
+    width:100%;
+    display:block;
+    margin-left: 0rem;
+    
+  }
+}
 @media screen and (max-width: 960px){
  .footlist{
    display: none;
@@ -48,4 +95,16 @@ color: #00ba8e;
    display: block;
    visibility: visible;
  }
+ .footer-down{
+   display: block;
+   grid-template-columns: 1fr;
+ }
+ .footer-icons{
+  width: 100%;
+}
+.footer
+{
+  margin: 0rem;
+  height: 12.4rem;
+}
 }

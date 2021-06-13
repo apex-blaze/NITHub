@@ -30,7 +30,7 @@ span{
 .mockup{
     display: inline;
     position: absolute;
-    height:30vw;
+    height:35vw;
     width:44vw;
     bottom:0;
     /* padding-bottom : 2rem; */
@@ -45,6 +45,10 @@ span{
     grid-template-columns: 1fr 1fr;
 
   
+}
+.start{
+    display: none;
+    visibility: hidden;
 }
 .green-section{
     display:grid;
@@ -94,6 +98,11 @@ span{
     display: 
     none;
 }
+@media screen and (max-width: 1220px) {
+    .mockup{
+        height: 42vw;
+    }
+}
 
   @media screen and (max-width: 960px) {
       
@@ -104,8 +113,8 @@ span{
     }
     .left{
         display: inline;
-        padding:1rem 3rem;
-        height:0rem;
+        padding:0rem 3rem;
+        height:12rem;
         
     }
     .right{
@@ -115,25 +124,34 @@ span{
     }
     .go-green{
         grid-template-columns: 1fr 1fr;
+        margin-top: 18rem;
     }
     .mockup{
         display: none;
     }
-
+.start{
+    visibility: visible;
+    display: block;
+    position: absolute;
+    height:22vw;
+    width:33vw;
+    bottom:0;
+}
       }
       
+ 
   @media screen and (max-width: 650px) {
       
     .home-container{    
         grid-template-columns: 1fr;
-        height: 70rem;
+        /* height: 70rem; */
     
     }
     .go-green{
         grid-template-columns: 2rem 20rem;
-        height: 20rem;
+        height: 19rem;
     }
-    .mockup{
+    .start{
         display: none;
     }
 .home-started{
