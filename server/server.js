@@ -79,11 +79,26 @@ app.get("/dashboard", function (req, res) {
   }
 });
 
-app.get("/notices", function (req, res) {});
+app.get("/notices", function (req, res) {
+  Notice.find({}, function (err, notice) {
+    if (err) {
+      console.log(err);
+    } else {
+      async function fetchNotices() {
+        const sort = { _id: "desc" };
+        const response = await Notice.find({}, null, { sort: sort });
+        console.log(response);
+        res.send(response);
+      }
+      fetchNotices();
+    }
+  });
+});
 
 app.post("/notices", function (req, res) {
   console.log(req.body);
   console.log(req.files);
+
   let file = new Notice({
     title: req.body.title,
     description: req.body.description,

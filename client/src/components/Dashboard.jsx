@@ -42,6 +42,8 @@ function Dashboard() {
     async function fetchNotices() {
       const response = await Ajax.get(`/notices`);
       console.log(response);
+      // const buff = response.data[0].pdf;
+      // console.log(buff);
       // const data = response.data;
     }
     fetchNotices();
