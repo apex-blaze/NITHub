@@ -9,34 +9,35 @@ function Footlist() {
     return (  
         <div>
             <div className="footlist">
-             <div><a href="/" className="footcompo" style={{color:"#00ba8e"}}>Support</a>
-             <a href="/" className="footcompo">Community</a>
-             <a href="/" className="footcompo">Company</a>
+             <div style={{margin:"0 auto"}}><a href="/" className="footcompo" style={{color:"#00ba8e"}}>Support</a>
+             <a href="/" className="footcompo">Contact</a>
+             <a href="/" className="footcompo">About us</a>
              </div>
-             <Logo/>
+             <div className="footer-logo">
+             <Logo /></div>
              <div className="foot-icons">
-        <ul type="none" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
+        <ul type="none" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",height:"90%"}}>
                 <li>
-              <a href="www.facebook.com">  <i style={{color:"#00ba8e"}} className={hoverf?"fab fa-facebook-f fa-1x":"fab fa-facebook-f fa-lg"} onMouseEnter={()=>sethoverf(false)} onMouseLeave={()=>sethoverf(true)}></i></a>
+              <a href="https://www.facebook.com/">  <i style={{color:"#00ba8e",transitionDuration:"0.6s"}} className={hoverf?"fab fa-facebook-f fa-lg":"fab fa-facebook-f fa-2x"} onMouseEnter={()=>sethoverf(false)} onMouseLeave={()=>sethoverf(true)}></i></a>
                 </li>
                 <li>
-              <a href="www.instagram.com">  <i style={{color:"#00ba8e"}} className={hoveri?"fab fa-instagram fa-1x":"fab fa-instagram fa-lg"} onMouseEnter={()=>sethoveri(false)} onMouseLeave={()=>sethoveri(true)}></i></a>
+              <a href="https://www.instagram.com/">  <i style={{color:"#00ba8e",transitionDuration:"0.6s"}} className={hoveri?"fab fa-instagram fa-lg":"fab fa-instagram fa-2x"} onMouseEnter={()=>sethoveri(false)} onMouseLeave={()=>sethoveri(true)}></i></a>
 
                 </li>
                 <li>
-              <a href="www.twitter.com">  <i style={{color:"#00ba8e"}} className={hovert?"fab fa-twitter fa-1x":"fab fa-twitter fa-lg"} onMouseEnter={()=>sethovert(false)} onMouseLeave={()=>sethovert(true)}></i></a>
+                <a href="https://in.linkedin.com/">  <i style={{color:"#00ba8e",transitionDuration:"0.6s"}} className={hovert?"fab fa-linkedin-in fa-lg":"fab fa-linkedin-in fa-2x"} onMouseEnter={()=>sethovert(false)} onMouseLeave={()=>sethovert(true)}></i></a>
 
                 </li>
                 <li>
-             <a href="www.snapchat.com">   <i style={{color:"#00ba8e"}} className={hovers?"fab fa-snapchat-ghost fa-1x":"fab fa-snapchat-ghost fa-lg"} onMouseEnter={()=>sethovers(false)} onMouseLeave={()=>sethovers(true)}></i></a>
+                <a href="https://github.com/apex-blaze/NITHub">   <i style={{color:"#00ba8e",transitionDuration:"0.6s"}} className={hovers?"fab fa-github fa-lg":"fab fa-github fa-2x"} onMouseEnter={()=>sethovers(false)} onMouseLeave={()=>sethovers(true)}></i></a>
+
                 </li>
             </ul>
+            
             </div>
+          
         </div> 
-        {/* <div style={{display:"block", margin:"1rem auto"}}>
-<p className="footer-cc">©2021 NITHub
-</p>
-            </div> */}
+       
         </div>   
     );
 }

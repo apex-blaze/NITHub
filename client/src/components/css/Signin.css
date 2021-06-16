@@ -24,7 +24,7 @@
   text-align: center;
   text-decoration: none;
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.34rem;
   width: 14rem;
   padding: 0.6rem 0;
   box-shadow: 2px 2px;
@@ -37,8 +37,7 @@
   margin: 1rem 7rem;
 }
 .signin-button:hover {
-  background-color: #0a9e7c;
-  font-size: 1.32rem;
+  background-color: #079e7b;
 }
 .signin-google {
   color: white;

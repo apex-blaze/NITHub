@@ -15,8 +15,12 @@ function Signin() {
   function onChange(e, fun) {
     fun(e.target.value);
   }
+  function upload(){
+    // document.getElementById("partupload").style.visibility='visible';
+  }
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
+
     e.preventDefault();
     try {
       const response = await Ajax.post(`/login`, {
@@ -39,59 +43,59 @@ function Signin() {
   return (
     <div className="signin">
       <div
-        class="modal fade"
+        className="modal fade"
         id="student"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title" id="exampleModalLabel">
                 Login as Student
               </h4>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <form action="/login" method="post" onSubmit={handleSubmit}>
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     onChange={(e) => onChange(e, setEmail)}
                     required
                   />
-                  <small id="emailHelp" class="form-text text-muted">
+                  <small id="emailHelp" className="form-text text-muted">
                     We'll never share your email with anyone else.
                   </small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                      type={passwordshow? "text":"password"}
                     name="password"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
                     onChange={(e) => onChange(e, setPassword)}
                     required
                   />
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                   <input
                     type="checkbox"
-                    class="form-check-input"
+                    className="form-check-input"
                     id="exampleCheck1"
                     onClick={passwordvisiblity}
                   />
@@ -117,60 +121,60 @@ function Signin() {
         </div>
       </div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="faculty"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel1"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title" id="exampleModalLabel1">
                 Login as Faculty
               </h4>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <form action="/dashboard">
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
                     type="email"
                     name="username"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputEmail2"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
                     onChange={(e) => onChange(e, setEmail)}
                     required
                   />
-                  <small id="emailHelp1" class="form-text text-muted">
+                  <small id="emailHelp1" className="form-text text-muted">
                     We'll never share your email with anyone else.
                   </small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label htmlFor="exampleInputPassword1">Password</label>
                   <input
                     type={passwordshow? "text":"password"}
                     name="password"
-                    class="form-control"
+                    className="form-control"
                     id="exampleInputPassword2"
                     placeholder="Password"
                     onChange={(e) => onChange(e, setPassword)}
                     required
                   />
                 </div>
-                <div class="form-check">
+                <div className="form-check">
                   <input
                     type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
+                    className="form-check-input"
+                    id="exampleCheck2"
                     onClick={passwordvisiblity}
                   />
                   <label className="form-check-label" htmlFor="exampleCheck1">

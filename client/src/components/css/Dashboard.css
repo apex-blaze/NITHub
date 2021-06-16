@@ -42,7 +42,9 @@ border-radius: 1px solid #00916f;
     border: 1px solid #00ba8e;
     margin: 2rem auto;
     
+    
 }
+
 .file{
     display: flex;
     flex-direction: column;
@@ -104,6 +106,9 @@ margin: 1rem auto;
     background-color: white;
     color: black;
     margin: 0rem 2.5rem;
+  }
+  .collapse-clos{
+      display: none;
   }
 .wrap{
     width: 60%;

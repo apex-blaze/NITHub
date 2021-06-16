@@ -39,9 +39,8 @@ function Home() {
             </div>
 
             <div>
-              {/* <h4 className="create-now">Create your Account Now !!!</h4> */}
               <Link to="/register">
-                <button className="home-started">Create Account</button>
+                <button className="home-started">Get Started</button>
               </Link>
             </div>
           </div>

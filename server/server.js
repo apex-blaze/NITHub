@@ -45,6 +45,7 @@ const userSchema = new mongoose.Schema({
   rollno: String,
   year: Number,
   username: String,
+  avatar: String,
 });
 
 const noticeSchema = new mongoose.Schema({
@@ -136,6 +137,7 @@ app.post("/register", function (req, res) {
     rollno: req.body.rollno,
     branch: req.body.branch,
     year: req.body.year,
+    avatar: req.body.avatar,
   };
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
