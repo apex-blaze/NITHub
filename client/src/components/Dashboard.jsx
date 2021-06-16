@@ -63,9 +63,9 @@ function Dashboard() {
       <hr className="profile-hr"></hr>
 
       <div className="Dashboard-down">
-        <div className="part1">
+        <div className="part1" id="partupload">
           <div className="file">
-            <form action="/notices" method="POST" onSubmit={handleSubmit} enctype="multipart/form-data">
+            <form action="/notices" method="POST" onSubmit={handleSubmit} encType="multipart/form-data">
               <label
                 className="dashboard-para"
                 style={{ fontSize: "1.6rem" }}

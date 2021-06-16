@@ -13,7 +13,6 @@ function Services() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              {/* <i className="fas fa-clipboard-list fa-10x" style={{color:"#00ba8e"}}></i> */}
               <img
                 src={bg1}
                 alt="/"
@@ -26,12 +25,12 @@ function Services() {
             </div>
             <div className="flip-card-back">
               <h2>Instant Notification</h2>
-              <hr className="Services-hr" style={{ color: "white" }}></hr>
+              <hr className="Services-hr"></hr>
 
               <p>
                 Super Fast Notification Provided at the cost of Subsciption.
               </p>
-              <p>through emails</p>
+              {/* <p>through emails</p> */}
             </div>
           </div>
         </div>
@@ -40,7 +39,6 @@ function Services() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              {/* <i class="fas fa-arrow-alt-circle-down fa-10x" style={{color:"#00ba8e"}}></i> */}
               <img
                 src={bg3}
                 alt="/"
@@ -53,13 +51,13 @@ function Services() {
             </div>
             <div className="flip-card-back">
               <h2>Time Saving</h2>
-              <hr className="Services-hr" style={{ color: "white" }}></hr>
+              <hr className="Services-hr"></hr>
 
               <p>
                 You will get notified about new recruiting companies and new
                 notices directly from the Dean Academics and TPO's office.
               </p>
-              <p>through emails</p>
+              {/* <p>through emails</p> */}
             </div>
           </div>
         </div>
@@ -68,7 +66,6 @@ function Services() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              {/* <i className="fas fa-clipboard-list fa-10x" style={{color:"#00ba8e"}}></i> */}
               <img
                 src={bg2}
                 alt="/"
@@ -81,18 +78,17 @@ function Services() {
             </div>
             <div className="flip-card-back">
               <h2>Instant Notification</h2>
-              <hr className="Services-hr" style={{ color: "white" }}></hr>
+              <hr className="Services-hr"></hr>
 
               <p>
                 Super Fast Notification Provided at the cost of Subsciption.
               </p>
-              <p>through emails</p>
+              {/* <p>through emails</p> */}
             </div>
           </div>
         </div>
       </div>
       </div>
-      {/* </div> */}
     </section>
   );
 }

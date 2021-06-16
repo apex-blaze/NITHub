@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import "./css/Register.css";
 import { useHistory } from "react-router-dom";
 import Ajax from "../apis/ajax";
+import img2 from "../images/2.png"
+import img1 from "../images/1.png"
+import img3 from "../images/3.png"
+import img4 from "../images/7.jpg"
+import img5 from "../images/5.jpg"
+import img6 from "../images/6.jpg"
+
+
+
 function Register() {
   let history = useHistory();
   const [click, setclick] = useState(false);
@@ -24,6 +33,8 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [avatar, setAvatar] = useState("");
+
 
   function onChange(e, fun) {
     fun(e.target.value);
@@ -53,6 +64,7 @@ function Register() {
           year,
           username: email,
           password,
+          avatar,
         });
         console.log(response.status);
         history.push("/dashboard");
@@ -70,7 +82,7 @@ function Register() {
     <div className="Register">
       <h1 className="Register-label-header"> Register Here</h1>
       <hr style={{ backgroundColor: "#00ba8e" }}></hr>
-      <div class="container">
+      <div className="container">
         <form action="/register" method="post" onSubmit={handleSubmit}>
           <label className="Register-label" htmlFor="fname">
             First Name
@@ -116,6 +128,7 @@ function Register() {
             name="branch"
             required="required"
             value={branch}
+cla
             onChange={(e) => onChange(e, setBranch)}
           >
             <option value="">Select</option>
@@ -138,6 +151,7 @@ function Register() {
             required="required"
             name="year"
             value={year}
+            cla
             onChange={(e) => onChange(e, setYear)}
           >
             <option value="">Select</option>
@@ -160,12 +174,7 @@ function Register() {
             required
           />
           <label htmlFor="Password">Password</label>
-<<<<<<< HEAD
-<div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
-=======
-          <i onClick={passwordvisiblity1} style={{marginTop:"2rem"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
-
->>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
+<div  style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
           <input
             type={passwordshowc? "text":"password"}
             id="lname"
@@ -173,15 +182,10 @@ function Register() {
             onChange={(e) => onChange(e, setPassword)}
             placeholder="Password"
           />
-<<<<<<< HEAD
-          <i onClick={passwordvisiblity1} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px" , backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={clickc?"fas fa-eye": "fas fa-eye-slash"} />
+          <i onClick={passwordvisiblity1} className={clickc?"fas fa-eye eye": "fas fa-eye-slash eye"} />
 </div>
           <label htmlFor="Confirm password">Confirm password</label>
-          <div className="eye" style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
-=======
-          <label htmlFor="Confirm password">Confirm password</label>
-          <i onClick={passwordvisiblity} style={{marginTop:"2rem"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
->>>>>>> d6436afbdb097ee00514e4fccd30ccfcaf1ae767
+          <div  style={{display:"grid",gridTemplateColumns:"94% 6%"}}>
 
           <input
             type={passwordshow? "text":"password"}
@@ -190,7 +194,7 @@ function Register() {
             onChange={(e) => onChange(e, setConfirmPassword)}
             placeholder="Confirm password"
           />
-          <i onClick={passwordvisiblity} style={{marginTop:"6px",marginBottom:"1rem" ,paddingTop:"1.4rem",marginLeft:"0rem",paddingLeft:"7px",backgroundColor:"#e0fcf5",borderBottom:"1.5px solid #00ba8e"}} className={click?"fas fa-eye": "fas fa-eye-slash"} />
+          <i  onClick={passwordvisiblity}  className={click?"fas fa-eye eye": "fas fa-eye-slash eye"} />
 </div>
           <span
             id="message1"
@@ -200,8 +204,25 @@ function Register() {
             {" "}
             **Password didn't match{" "}
           </span>
+{/* <div className="dropdown"  style={{width:"100%",height:"4rem",display:"block",margin:"0 auto"}}>
+  <button className="btn avatar-btn dropdown-toggle" style={{margin:"0.6rem auto"}} type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+    Choose Avatar
+  </button>
+  <ul style={{backgroundColor:"#F2F2F2",opacity:"0.99"}} className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onChange={(e) => onChange(e, setAvatar)}>
+    <li className="each-avatar"  > */}
+    <select id="avatar" onChange={(e) => onChange(e, setAvatar)}>
+ <option value="img2" style={{backgroundImage:`url(${img2})`,height:"12rem"}}></option>
+ <option value="img1" > </option>
+ <option value="img3"> </option>
+ <option value="img4">  </option>
+ <option value="img6">  </option>
+ <option value="img5"> </option>
+</select>
+    {/* </li>
+  </ul> */}
 
           <input id="submit" type="submit" value="Submit" />
+          
         </form>
       </div>
     </div>

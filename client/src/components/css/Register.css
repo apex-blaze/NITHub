@@ -64,6 +64,13 @@ input[type=text], select, textarea {
     display: none;
     
   }
+  .avatar1{
+    border-radius: 100%;
+    height:130px;
+    width:130px;
+    display: block;
+    margin: 0 auto;
+}
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
     background-color: #00ba8e;
@@ -74,7 +81,19 @@ input[type=text], select, textarea {
     cursor: pointer;
     margin: 0 auto;
   }
- 
+ .choose-avatar{
+  background-color: #00ba8e !important;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+ .each-avatar{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+ }
   input[type=text]:focus {
   outline: none;
   background-color: #e0fcf5;}
@@ -87,7 +106,22 @@ input[type=text], select, textarea {
     outline: none;
     background-color: #e0fcf5;
   }
-
+  .register-dropdown:focus{
+    outline: none;
+  }
+.avatar-btn{
+  background-color: #319cbd;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.avatar-btn:hover{
+  background-color: #106c88;
+color: white;
+}
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
     background-color: #00916f;
@@ -105,7 +139,18 @@ input[type=text], select, textarea {
     padding: 1.2rem;
     
   }
-
+  .eye{
+    margin-top:6px;
+    margin-bottom:1rem;
+    padding-top:1.2rem;
+    margin-left:0rem;
+    padding-left:7px;
+     background-color:#e0fcf5;
+     border-bottom:1.5px solid #00ba8e; 
+  }
+.eye:focus{
+  background-color: #00ba8e;
+}
 @media screen and (max-width: 960px) {
     .Register{
         width: 70%;
@@ -121,5 +166,8 @@ input[type=text], select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.each-avatar{
+  grid-template-columns: 1fr 1fr;
 }
 }
