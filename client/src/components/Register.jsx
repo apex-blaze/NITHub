@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./css/Register.css";
 import { useHistory } from "react-router-dom";
 import Ajax from "../apis/ajax";
-import img2 from "../images/2.png"
-import img1 from "../images/1.png"
-import img3 from "../images/3.png"
-import img4 from "../images/7.jpg"
-import img5 from "../images/5.jpg"
-import img6 from "../images/6.jpg"
+import img2 from "../images/2.png";
+import img1 from "../images/1.png";
+import img3 from "../images/3.png";
+import img4 from "../images/7.jpg";
+import img5 from "../images/5.jpg";
+import img6 from "../images/6.jpg";
 
 
 
@@ -78,6 +78,18 @@ function Register() {
     }
   }
 
+  useEffect(()=>{
+    const avatarList = document.querySelectorAll(".avatar-list");
+    // console.log(avatarList);
+    avatarList.forEach(ava =>{
+       ava.addEventListener("click",(e)=>{
+          const avaString = ava.getAttribute("value");
+          setAvatar(avaString);
+       })
+      })
+      return avatarList;
+  },[]);
+
   return (
     <div className="Register">
       <h1 className="Register-label-header"> Register Here</h1>
@@ -128,7 +140,7 @@ function Register() {
             name="branch"
             required="required"
             value={branch}
-cla
+className="register-dropdown"
             onChange={(e) => onChange(e, setBranch)}
           >
             <option value="">Select</option>
@@ -151,7 +163,7 @@ cla
             required="required"
             name="year"
             value={year}
-            cla
+            className="register-dropdown"
             onChange={(e) => onChange(e, setYear)}
           >
             <option value="">Select</option>
@@ -204,23 +216,34 @@ cla
             {" "}
             **Password didn't match{" "}
           </span>
-{/* <div className="dropdown"  style={{width:"100%",height:"4rem",display:"block",margin:"0 auto"}}>
+<div className="dropdown"  style={{width:"100%",height:"4rem",display:"block",margin:"0 auto"}}>
   <button className="btn avatar-btn dropdown-toggle" style={{margin:"0.6rem auto"}} type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
     Choose Avatar
   </button>
-  <ul style={{backgroundColor:"#F2F2F2",opacity:"0.99"}} className="dropdown-menu" aria-labelledby="dropdownMenuButton1" onChange={(e) => onChange(e, setAvatar)}>
-    <li className="each-avatar"  > */}
-    <select id="avatar" onChange={(e) => onChange(e, setAvatar)}>
- <option value="img2" style={{backgroundImage:`url(${img2})`,height:"12rem"}}></option>
- <option value="img1" > </option>
- <option value="img3"> </option>
- <option value="img4">  </option>
- <option value="img6">  </option>
- <option value="img5"> </option>
-</select>
-    {/* </li>
-  </ul> */}
+  
+  <ul style={{backgroundColor:"#F2F2F2",opacity:"0.99"}} className="dropdown-menu" aria-labelledby="dropdownMenuButton1"  >
+ <div className=" each-avatar"> <li value="img2"  className="avatar-list ">
+  <img src={img2}  alt="Avatar" style={{margin:"10px"}}  className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"   />
+  </li>
+  <li value="img1"  className="avatar-list">
+  <img src={img1} alt="Avatar" style={{margin:"10px"}}  className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"  />
+  </li>
+  <li value="img3"  className="avatar-list">
+  <img src={img3} alt="Avatar"  style={{margin:"10px"}} className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"  />
+  </li>
+  <li value="img4"  className="avatar-list">
+    <img src={img4} alt="Avatar" style={{margin:"10px"}}   className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"  />
+    </li>
+    <li value="img6"  className="avatar-list">
+    <img src={img6} alt="Avatar" style={{margin:"10px"}}  className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"  />
+    </li>
+    <li value="img5"  className="avatar-list">
+  <img src={img5} alt="Avatar" style={{margin:"10px"}}  className=" dropdown-itemnavbar-link avatar1" data-bs-toggle="modal"  />
 
+    </li>
+    </div>
+ </ul>
+    </div>
           <input id="submit" type="submit" value="Submit" />
           
         </form>

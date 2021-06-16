@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React from "react"
 import "./css/Footer.css"
 import Footlist from "./Footlist"
 function Footer() {

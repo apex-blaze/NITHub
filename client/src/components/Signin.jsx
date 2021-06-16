@@ -16,7 +16,7 @@ function Signin() {
     fun(e.target.value);
   }
   function upload(){
-    document.getElementById("partupload").style.visibility='visible';
+    // document.getElementById("partupload").style.visibility='visible';
   }
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
@@ -112,7 +112,7 @@ function Signin() {
                   **Password is incorrect{" "}
                 </span>
 
-                <button type="submit" className="submit-button" onClick={upload}>
+                <button type="submit" className="submit-button">
                   Submit
                 </button>
               </form>

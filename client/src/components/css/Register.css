@@ -122,6 +122,12 @@ input[type=text], select, textarea {
   background-color: #106c88;
 color: white;
 }
+.avatar1:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
     background-color: #00916f;
@@ -167,6 +173,10 @@ color: white;
     align-items: center;
     justify-content: center;
 }
+
+}
+@media screen and (max-width: 550px) {
+
 .each-avatar{
   grid-template-columns: 1fr 1fr;
 }

@@ -107,6 +107,9 @@ margin: 1rem auto;
     color: black;
     margin: 0rem 2.5rem;
   }
+  .collapse-clos{
+      display: none;
+  }
 .wrap{
     width: 60%;
     display: block;
