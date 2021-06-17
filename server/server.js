@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
 const fileUpload = require("express-fileupload");
-const multer = require("multer");
+// const multer = require("multer");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -48,6 +48,14 @@ const userSchema = new mongoose.Schema({
   avatar: String,
 });
 
+const facultySchema = new mongoose.Schema({
+  fname: String,
+  lname: String,
+  password: String,
+  dept: String,
+  username: String,
+})
+
 const noticeSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -56,11 +64,16 @@ const noticeSchema = new mongoose.Schema({
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
+facultySchema.plugin(passportLocalMongoose);
+facultySchema.plugin(findOrCreate);
+
 
 const User = new mongoose.model("User", userSchema);
 const Notice = new mongoose.model("Notice", noticeSchema);
+const Faculty = new mongoose.model("Faculty",facultySchema);
 
 passport.use(User.createStrategy()); // local strat
+passport.use(Faculty.createStrategy()); // local strat
 
 passport.serializeUser(function (user, done) {
   done(null, user.username);
@@ -114,6 +127,20 @@ app.post("/notices", function (req, res) {
   res.send("Ok thnx");
 });
 
+app.post("/login/faculty",passport.authenticate("local"),function(req,res){
+  const faculty = {
+    username : req.body.username,
+    password: req.body.password,
+  };
+  req.login(faculty,function(err){
+    if(err){
+      console.log(err);
+    }else{
+      res.send("Login Successful");
+    }
+  });
+});
+
 app.post("/login", passport.authenticate("local"), function (req, res) {
   const user = {
     username: req.body.username,
@@ -128,6 +155,26 @@ app.post("/login", passport.authenticate("local"), function (req, res) {
     }
   });
 });
+
+app.post("/register/faculty",function(req,res){
+  const newFaculty = {
+    username: req.body.username,
+    fname: req.body.fname,
+    lname: req.body.lname,
+    dept: req.body.department,
+  };
+  Faculty.register(newFaculty,req.body.password,function(err,faculty){
+      if(err){
+        console.log(err);
+        res.send("Not registered");
+      }else{
+        passport.authenticate("local")(req,res,function(){
+          res.send("Registered");
+        })
+      }
+  });
+
+})
 
 app.post("/register", function (req, res) {
   const newUser = {
