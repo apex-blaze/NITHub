@@ -8,6 +8,9 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [click, setclick] = useState(false);
   const[passwordshow, setPasswordshow]=useState(false);
+  const [username, setUsername] = useState("");
+  const [pwd, setPwd] = useState("");
+  const [letlogin,setLetlogin]=useState();
   const passwordvisiblity = () =>{ 
     setPasswordshow(passwordshow? false : true);
     setclick(click? false: true);
@@ -16,22 +19,32 @@ function Signin() {
     fun(e.target.value);
   }
   function upload(){
-    // document.getElementById("partupload").style.visibility='visible';
+    document.getElementById("partupload").style.visibility='visible';
   }
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
-
     e.preventDefault();
     try {
-      const response = await Ajax.post(`/login`, {
+      let response;
+      if(letlogin===false)
+      {
+        console.log("student");
+      response = await Ajax.post(`/login`, {
         username: email,
         password,
-      });
+      });}
+      else{
+        console.log("faculty");
+
+      response = await Ajax.post(`/login/faculty`, {
+        username: username,
+        password: pwd,
+      });}
       console.log(response);
       if (response.status === 200) {
         alert.style.display = "none";
-        history.push("/dashboard");
-        history.go(0);
+        // history.push("/dashboard");
+        // history.go(0);
       }
     } catch (err) {
       console.log(err);
@@ -63,7 +76,9 @@ function Signin() {
               ></button>
             </div>
             <div className="modal-body">
-              <form action="/login" method="post" onSubmit={handleSubmit}>
+              <form action="/login" method="post" 
+              onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
@@ -112,7 +127,8 @@ function Signin() {
                   **Password is incorrect{" "}
                 </span>
 
-                <button type="submit" className="submit-button">
+                <button type="submit" className="submit-button" 
+                onClick={()=>setLetlogin(false)}>
                   Submit
                 </button>
               </form>
@@ -141,17 +157,20 @@ function Signin() {
               ></button>
             </div>
             <div className="modal-body">
-              <form action="/dashboard">
+              <form action="/login/faculty"
+              method="POST"
+              onSubmit={handleSubmit}
+              >
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
-                    type="email"
+                    type="texts"
                     name="username"
                     className="form-control"
                     id="exampleInputEmail2"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
-                    onChange={(e) => onChange(e, setEmail)}
+                    onChange={(e) => onChange(e, setUsername)}
                     required
                   />
                   <small id="emailHelp1" className="form-text text-muted">
@@ -166,7 +185,7 @@ function Signin() {
                     className="form-control"
                     id="exampleInputPassword2"
                     placeholder="Password"
-                    onChange={(e) => onChange(e, setPassword)}
+                    onChange={(e) => onChange(e, setPwd)}
                     required
                   />
                 </div>
@@ -182,7 +201,8 @@ function Signin() {
                   </label>
                 </div>
 
-                <button type="submit" className="submit-button">
+                <button type="submit" className="submit-button"
+                 onClick={()=>setLetlogin(true)}>
                   Submit
                 </button>
               </form>

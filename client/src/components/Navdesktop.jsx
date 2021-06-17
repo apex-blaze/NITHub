@@ -10,6 +10,7 @@ function Navdesktop() {
 
   //  console.log(sect);
   // }
+
     return (
         <div className="navdesktop">
         
@@ -20,10 +21,10 @@ function Navdesktop() {
         <div className="dropdown navbar-link">
   <a href="/" className="dropbtn navbar-link">Login{" "}<i className="fas fa-caret-down fa-xs" /></a>
   <div className="dropdown-content">
-  <a href="/" style={{backgroundColor:"black",width:"10rem", fontSize:"1.2rem", border:"none"}}  className="navbar-link" data-bs-toggle="modal" data-bs-target="#faculty">
+  <a href="/faculty" style={{backgroundColor:"black",width:"10rem", fontSize:"1.2rem", border:"none"}}  className="navbar-link" data-bs-toggle="modal" data-bs-target="#faculty">
   Login as Faculty
 </a>
-    <a href="/" style={{backgroundColor:"black",width:"10rem", fontSize:"1.2rem", border:"none"}} className="navbar-link" data-bs-toggle="modal" data-bs-target="#student">
+    <a href="/student" style={{backgroundColor:"black",width:"10rem", fontSize:"1.2rem", border:"none"}} className="navbar-link" data-bs-toggle="modal" data-bs-target="#student">
   Login as Student
 </a>
   </div>

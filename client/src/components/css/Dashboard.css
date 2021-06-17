@@ -101,23 +101,25 @@ margin: 1rem auto;
 }
 .collapse-button {
     display: inline;
-    width: 40%;
+    width: 50%;
     border: none;
     background-color: white;
     color: black;
     margin: 0rem 2.5rem;
+    padding: 4px 1rem;
+    
   }
   .collapse-clos{
       display: none;
   }
 .wrap{
-    width: 60%;
+    width: 70%;
     display: block;
     margin: 0 auto;
 }
 
   .collapse-button:hover{
-    padding:4px 0px;
+    /* padding:4px 0px; */
 
      border-bottom: 2px solid #00ba8e;
      background-color: #cdf1ea;
@@ -125,7 +127,7 @@ margin: 1rem auto;
   }
 
   .collapse-button:focus{
-    padding:4px 0px;
+    /* padding:4px 0px; */
    border-bottom: 2px solid #00ba8e;
    color: #00ba8e;
 
