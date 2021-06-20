@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   branch: String,
   rollno: String,
-  year: Number,
+  year: String,
   username: String,
   avatar: String,
 });
@@ -83,6 +83,10 @@ passport.deserializeUser(function (id, done) {
   User.findById(id, function (err, user) {
     done(err, user);
   });
+});
+
+app.get("/",function(req,res){
+  res.send("Backend is working fine!!");
 });
 
 app.get("/dashboard", function (req, res) {
@@ -128,6 +132,9 @@ app.post("/notices", function (req, res) {
 });
 
 app.post("/login/faculty",passport.authenticate("local"),function(req,res){
+
+  console.log(req.body);
+
   const faculty = {
     username : req.body.username,
     password: req.body.password,
@@ -142,6 +149,7 @@ app.post("/login/faculty",passport.authenticate("local"),function(req,res){
 });
 
 app.post("/login", passport.authenticate("local"), function (req, res) {
+  console.log(req.body);
   const user = {
     username: req.body.username,
     password: req.body.password,
@@ -177,7 +185,8 @@ app.post("/register/faculty",function(req,res){
 })
 
 app.post("/register", function (req, res) {
-  const newUser = {
+  console.log(req.body);
+  const newUser = new User ({
     username: req.body.username,
     fname: req.body.fname,
     lname: req.body.lname,
@@ -185,7 +194,7 @@ app.post("/register", function (req, res) {
     branch: req.body.branch,
     year: req.body.year,
     avatar: req.body.avatar,
-  };
+  });
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       console.log(err);

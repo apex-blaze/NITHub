@@ -7,7 +7,7 @@ function Header() {
     
     
     return (
-        <div className="navbar">
+        <div className="navbar1">
 
             <Logo/>
             <Navdesktop />

@@ -18,9 +18,9 @@ function Signin() {
   function onChange(e, fun) {
     fun(e.target.value);
   }
-  function upload(){
-    document.getElementById("partupload").style.visibility='visible';
-  }
+  // function upload(){
+  //   document.getElementById("partupload").style.visibility='visible';
+  // }
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
     e.preventDefault();
@@ -43,8 +43,8 @@ function Signin() {
       console.log(response);
       if (response.status === 200) {
         alert.style.display = "none";
-        // history.push("/dashboard");
-        // history.go(0);
+        history.push("/dashboard");
+        history.go(0);
       }
     } catch (err) {
       console.log(err);
@@ -164,7 +164,7 @@ function Signin() {
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
-                    type="texts"
+                    type="text"
                     name="username"
                     className="form-control"
                     id="exampleInputEmail2"

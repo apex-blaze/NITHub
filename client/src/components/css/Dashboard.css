@@ -38,7 +38,6 @@ border-radius: 1px solid #00916f;
     width:80%;
     height: 45%;
     border-radius: 8px;
-    margin:1rem auto;
     border: 1px solid #00ba8e;
     margin: 2rem auto;
     
@@ -194,7 +193,7 @@ margin: 1rem auto;
         grid-template-columns: 1fr;
     }
     .wrap{
-        width: 70%;
+        width: 100%;
         display: block;
         margin: 0 auto;
     }
