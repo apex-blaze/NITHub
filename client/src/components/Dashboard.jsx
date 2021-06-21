@@ -4,29 +4,28 @@ import "./css/Dashboard.css";
 import img from "../images/2.png";
 import Ajax from "../apis/ajax";
 function Dashboard() {
+  let ley;
+  const [sorce, setSorce] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
-  const [feed,setFeed]=useState(false);
-  const [activity,setActivity]=useState(false);
-  const [news,setNews]=useState(true);
-  function Feeder(){
+  const [feed, setFeed] = useState(false);
+  const [activity, setActivity] = useState(false);
+  const [news, setNews] = useState(true);
+  function Feeder() {
     setFeed(true);
     setActivity(false);
-    setNews(false)
-
+    setNews(false);
   }
-  function Activity(){
+  function Activity() {
     setFeed(false);
     setActivity(true);
     setNews(false);
-
   }
-  function News(){
+  function News() {
     setFeed(false);
     setActivity(false);
     setNews(true);
-
   }
 
   function onChange(e, fun) {
@@ -35,7 +34,11 @@ function Dashboard() {
 
   function handleFile(e) {
     e.preventDefault();
+    console.log(e.target.files[0]);
     setFile(e.target.files[0]);
+  }
+  function openPDF(link) {
+    window.open(link);
   }
 
   async function handleSubmit(e) {
@@ -64,12 +67,14 @@ function Dashboard() {
     async function fetchNotices() {
       const response = await Ajax.get(`/notices`);
       console.log(response);
+      setSorce(`data:application/pdf;base64,${response.data[0].pdf}`);
+      console.log(sorce);
       // const buff = response.data[0].pdf;
       // console.log(buff);
       // const data = response.data;
     }
     fetchNotices();
-  }, []);
+  }, [sorce]);
 
   return (
     <div className="Dashboard">
@@ -183,7 +188,10 @@ function Dashboard() {
 
           <hr className="profile-hr1" />
 
-          <div className={activity?"collapse-op": "collapse-clos"} id="activity">
+          <div
+            className={activity ? "collapse-op" : "collapse-clos"}
+            id="activity"
+          >
             <div className="card card-body">
               <p className="dashboard-para">
                 1st Notification:
@@ -193,17 +201,27 @@ function Dashboard() {
               </p>
             </div>
           </div>
-          <div className={feed?"collapse-op":"collapse-clos"} id="feed">
+          <div className={feed ? "collapse-op" : "collapse-clos"} id="feed">
             <div className="card card-body">
               <p className="dashboard-para">
                 1st Feed:
                 <a href="/Dashboard" alt="1st one" style={{ color: "black" }}>
                   hello! I'm Feed
                 </a>
+                <button>Download</button>
+                <object data={sorce} type="application/pdf">
+                  <embed
+                    id="pdfID"
+                    type="application/pdf"
+                    width="400"
+                    height="300"
+                    src={sorce}
+                  />
+                </object>
               </p>
             </div>
           </div>
-          <div className={news?"collapse-op": "collapse-clos"} id="news">
+          <div className={news ? "collapse-op" : "collapse-clos"} id="news">
             <div className="card card-body">
               <p className="dashboard-para">
                 1st News:
