@@ -70,6 +70,7 @@ input[type=text], select, textarea {
     width:130px;
     display: block;
     margin: 0 auto;
+
 }
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
@@ -127,7 +128,10 @@ color: white;
   cursor: pointer;
 }
 
-
+.avatar1:focus{
+  opacity: 0.7;
+  cursor: pointer;
+}
   /* When moving the mouse over the submit button, add a darker green color */
   input[type=submit]:hover {
     background-color: #00916f;

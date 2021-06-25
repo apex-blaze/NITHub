@@ -7,39 +7,39 @@ function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [click, setclick] = useState(false);
-  const[passwordshow, setPasswordshow]=useState(false);
+  const [passwordshow, setPasswordshow] = useState(false);
   const [username, setUsername] = useState("");
   const [pwd, setPwd] = useState("");
-  const [letlogin,setLetlogin]=useState();
-  const passwordvisiblity = () =>{ 
-    setPasswordshow(passwordshow? false : true);
-    setclick(click? false: true);
-  }
+  const [letlogin, setLetlogin] = useState();
+  const passwordvisiblity = () => {
+    setPasswordshow(passwordshow ? false : true);
+    setclick(click ? false : true);
+  };
   function onChange(e, fun) {
     fun(e.target.value);
   }
-  // function upload(){
-  //   document.getElementById("partupload").style.visibility='visible';
-  // }
+  function upload() {
+    document.getElementById("partupload").style.visibility = "visible";
+  }
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
     e.preventDefault();
     try {
       let response;
-      if(letlogin===false)
-      {
+      if (letlogin === false) {
         console.log("student");
-      response = await Ajax.post(`/login`, {
-        username: email,
-        password,
-      });}
-      else{
+        response = await Ajax.post(`/login`, {
+          username: email,
+          password,
+        });
+      } else {
         console.log("faculty");
 
-      response = await Ajax.post(`/login/faculty`, {
-        username: username,
-        password: pwd,
-      });}
+        response = await Ajax.post(`/login/faculty`, {
+          username: username,
+          password: pwd,
+        });
+      }
       console.log(response);
       if (response.status === 200) {
         alert.style.display = "none";
@@ -76,9 +76,7 @@ function Signin() {
               ></button>
             </div>
             <div className="modal-body">
-              <form action="/login" method="post" 
-              onSubmit={handleSubmit}
-              >
+              <form action="/login" method="post" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
@@ -98,7 +96,7 @@ function Signin() {
                 <div className="form-group">
                   <label htmlFor="exampleInputPassword1">Password</label>
                   <input
-                     type={passwordshow? "text":"password"}
+                    type={passwordshow ? "text" : "password"}
                     name="password"
                     className="form-control"
                     id="exampleInputPassword1"
@@ -127,8 +125,11 @@ function Signin() {
                   **Password is incorrect{" "}
                 </span>
 
-                <button type="submit" className="submit-button" 
-                onClick={()=>setLetlogin(false)}>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  onClick={() => setLetlogin(false)}
+                >
                   Submit
                 </button>
               </form>
@@ -157,9 +158,10 @@ function Signin() {
               ></button>
             </div>
             <div className="modal-body">
-              <form action="/login/faculty"
-              method="POST"
-              onSubmit={handleSubmit}
+              <form
+                action="/login/faculty"
+                method="POST"
+                onSubmit={handleSubmit}
               >
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
@@ -180,7 +182,7 @@ function Signin() {
                 <div className="form-group">
                   <label htmlFor="exampleInputPassword1">Password</label>
                   <input
-                    type={passwordshow? "text":"password"}
+                    type={passwordshow ? "text" : "password"}
                     name="password"
                     className="form-control"
                     id="exampleInputPassword2"
@@ -201,8 +203,11 @@ function Signin() {
                   </label>
                 </div>
 
-                <button type="submit" className="submit-button"
-                 onClick={()=>setLetlogin(true)}>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  onClick={() => setLetlogin(true)}
+                >
                   Submit
                 </button>
               </form>

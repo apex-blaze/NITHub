@@ -54,7 +54,7 @@ const facultySchema = new mongoose.Schema({
   password: String,
   dept: String,
   username: String,
-})
+});
 
 const noticeSchema = new mongoose.Schema({
   title: String,
@@ -67,22 +67,27 @@ userSchema.plugin(findOrCreate);
 facultySchema.plugin(passportLocalMongoose);
 facultySchema.plugin(findOrCreate);
 
-
 const User = new mongoose.model("User", userSchema);
 const Notice = new mongoose.model("Notice", noticeSchema);
-const Faculty = new mongoose.model("Faculty",facultySchema);
+const Faculty = new mongoose.model("Faculty", facultySchema);
 
-passport.use(User.createStrategy()); // local strat
-passport.use(Faculty.createStrategy()); // local strat
+passport.use("user-local", User.createStrategy()); // local strat
+passport.use("faculty-local", Faculty.createStrategy()); // local strat
 
 passport.serializeUser(function (user, done) {
   done(null, user.username);
 });
 
 passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+  if (id.username.toString().includes("@")) {
+    User.findById(id, function (err, user) {
+      done(err, user);
+    });
+  } else {
+    Faculty.findById(id, function (err, user) {
+      done(err, user);
+    });
+  }
 });
 
 app.get("/",function(req,res){
@@ -131,25 +136,25 @@ app.post("/notices", function (req, res) {
   res.send("Ok thnx");
 });
 
-app.post("/login/faculty",passport.authenticate("local"),function(req,res){
+app.post(
+  "/login/faculty",
+  passport.authenticate("faculty-local"),
+  function (req, res) {
+    const faculty = {
+      username: req.body.username,
+      password: req.body.password,
+    };
+    req.login(faculty, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Login Successful");
+      }
+    });
+  }
+);
 
-  console.log(req.body);
-
-  const faculty = {
-    username : req.body.username,
-    password: req.body.password,
-  };
-  req.login(faculty,function(err){
-    if(err){
-      console.log(err);
-    }else{
-      res.send("Login Successful");
-    }
-  });
-});
-
-app.post("/login", passport.authenticate("local"), function (req, res) {
-  console.log(req.body);
+app.post("/login", passport.authenticate("user-local"), function (req, res) {
   const user = {
     username: req.body.username,
     password: req.body.password,
@@ -164,25 +169,24 @@ app.post("/login", passport.authenticate("local"), function (req, res) {
   });
 });
 
-app.post("/register/faculty",function(req,res){
+app.post("/register/faculty", function (req, res) {
   const newFaculty = {
     username: req.body.username,
     fname: req.body.fname,
     lname: req.body.lname,
     dept: req.body.department,
   };
-  Faculty.register(newFaculty,req.body.password,function(err,faculty){
-      if(err){
-        console.log(err);
-        res.send("Not registered");
-      }else{
-        passport.authenticate("local")(req,res,function(){
-          res.send("Registered");
-        })
-      }
+  Faculty.register(newFaculty, req.body.password, function (err, faculty) {
+    if (err) {
+      console.log(err);
+      res.send("Not registered");
+    } else {
+      passport.authenticate("faculty-local")(req, res, function () {
+        res.send("Registered");
+      });
+    }
   });
-
-})
+});
 
 app.post("/register", function (req, res) {
   console.log(req.body);
@@ -200,7 +204,7 @@ app.post("/register", function (req, res) {
       console.log(err);
       res.send("Register ni hua!!");
     } else {
-      passport.authenticate("local")(req, res, function () {
+      passport.authenticate("user-local")(req, res, function () {
         res.send("Register ho gya!!");
       });
     }

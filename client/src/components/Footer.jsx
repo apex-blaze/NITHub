@@ -2,7 +2,6 @@ import React from "react"
 import "./css/Footer.css"
 import Footlist from "./Footlist"
 function Footer() {
-   
     return (
         <div className="footer">
         <div className="footer-up">
