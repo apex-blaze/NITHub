@@ -166,7 +166,7 @@ function Signin() {
                 <div className="form-group">
                   <label htmlFor="exampleInputEmail1">Email address</label>
                   <input
-                    type="texts"
+                    type="text"
                     name="username"
                     className="form-control"
                     id="exampleInputEmail2"

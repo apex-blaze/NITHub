@@ -11,7 +11,6 @@ const App1 = () => (
       <Route path="/" exact component={App} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/dashboard" component={Dashboard} />
-
     </Switch>
   </BrowserRouter>
 );

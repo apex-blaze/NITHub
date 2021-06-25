@@ -1,5 +1,5 @@
 /* NavBar */
-.navbar {
+.navbar1 {
     height: 4.6rem;
     width: 100%;
     left: 0px;
@@ -115,7 +115,7 @@ color: #00ba8e;
   display: block;
 }
 .navdesktop{
-  /* visibility: hidden; */
+  visibility: hidden;
   display: none;
   
 }

@@ -35,10 +35,9 @@ border-radius: 1px solid #00916f;
     margin: 0 auto;
   }
 .part1{
-    width:80%;
-    height: 45%;
+    width:90%;
+    height: 55%;
     border-radius: 8px;
-    margin:1rem auto;
     border: 1px solid #00ba8e;
     margin: 2rem auto;
     
@@ -48,6 +47,13 @@ border-radius: 1px solid #00916f;
 .file{
     display: flex;
     flex-direction: column;
+}
+.upload-menu{
+    width: 90%;
+    margin: 1rem auto;
+}
+.upload-menu:focus{
+    outline: none;
 }
 .dashboard-file{
 width: 100%;
@@ -98,6 +104,7 @@ margin: 1rem auto;
 }
 .part2{
     display: block;
+    height: 45rem;
 }
 .collapse-button {
     display: inline;
@@ -144,7 +151,36 @@ margin: 1rem auto;
     align-items: center;
     justify-content: center;
 }
-
+.Notice-Download{
+    color: #00ba8e;
+}
+.Notice-Download:hover{
+    color: #00916f;
+}
+.read-less
+{
+display: none;
+margin: 1rem auto;
+}
+.read-more{
+display: block;
+}
+.showless
+{
+display: none;
+margin: 1rem auto;
+}
+.showmore{
+display: block;
+}
+.date{
+    position: relative;
+    /* right:-20rem */
+}
+.icon{
+    padding:1rem;
+    font-size: 1.5rem;
+}
 @media screen and (max-width: 1170px) {
     .Dashboard-profile{
         height:14rem;
@@ -186,7 +222,9 @@ margin: 1rem auto;
         width: 70%;
 
     }
-
+.Dashboard{
+    height: 50rem;
+}
     .profile-hr{
     display: none;
       }
@@ -194,14 +232,17 @@ margin: 1rem auto;
         grid-template-columns: 1fr;
     }
     .wrap{
-        width: 70%;
+        width: 100%;
         display: block;
         margin: 0 auto;
     }
     .part1{
         width:60%;
-        height: 75%;
+        height: 85%;
    
+    }
+    .part2{
+        height: 50rem;
     }
    
 }

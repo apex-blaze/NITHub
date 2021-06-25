@@ -12,6 +12,8 @@ function Footlist() {
              <div style={{margin:"0 auto"}}><a href="/" className="footcompo" style={{color:"#00ba8e"}}>Support</a>
              <a href="/" className="footcompo">Contact</a>
              <a href="/" className="footcompo">About us</a>
+             {/* <a href="/" className="footcompo">Feedback</a> */}
+
              </div>
              <div className="footer-logo">
              <Logo /></div>
