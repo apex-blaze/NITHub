@@ -121,6 +121,7 @@ app.get("/notices", function (req, res) {
 app.post("/notices", function (req, res) {
   console.log(req.body);
   console.log(req.files);
+  console.log(req.files.pdf.data);
 
   let file = new Notice({
     title: req.body.title,
