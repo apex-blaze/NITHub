@@ -6,7 +6,9 @@ function DashboardUpload() {
   const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
   const [type,setType]=useState("");
-  const date=new Date;
+  const dat=new Date;
+  const date=dat.getDay()+"/"+dat.getMonth()+"/"+dat.getFullYear();
+
   console.log(date);
   function onChange(e, fun) {
     fun(e.target.value);
@@ -31,7 +33,7 @@ function DashboardUpload() {
     formData.append("title", title);
     formData.append("description", description);
     formData.append("type",type);
-    formData.append("date".date);
+    formData.append("date",date);
     // for (let key of formData.entries()) {
     //   console.log(key[0] + ", " + key[1]);
     // }
@@ -102,10 +104,10 @@ function DashboardUpload() {
 
           >
             <option value="">Type of Notice..</option>
-            <option value="academic">Academic</option>
-            <option value="intern">Internship/Placement</option>
-            <option value="extras">ExtraCurricular</option>
-            <option value="others">Others</option>
+            <option value="Academic">Academic</option>
+            <option value="Intern/Placement">Internship/Placement</option>
+            <option value="ExtraCurricular">ExtraCurricular</option>
+            <option value="Others">Others</option>
           </select>
             <button className="submit-button">Upload!!</button>
           </form>
@@ -113,5 +115,4 @@ function DashboardUpload() {
       </div>
     )
 }
-
 export default DashboardUpload;

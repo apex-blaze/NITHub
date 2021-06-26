@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const passport = require("passport");
 const fileUpload = require("express-fileupload");
-// const multer = require("multer");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -60,6 +59,8 @@ const noticeSchema = new mongoose.Schema({
   title: String,
   description: String,
   pdf: String,
+  type: String,
+  date: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -120,13 +121,15 @@ app.get("/notices", function (req, res) {
 
 app.post("/notices", function (req, res) {
   console.log(req.body);
-  console.log(req.files);
-  console.log(req.files.pdf.data);
+  
 
   let file = new Notice({
     title: req.body.title,
     description: req.body.description,
     pdf: req.files.pdf.data.toString("base64"),
+    type:req.body.type,
+    date:req.body.date,
+    
   });
   file.save(function (err, notice) {
     if (err) console.log(err);

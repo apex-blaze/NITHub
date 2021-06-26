@@ -1,10 +1,17 @@
 import React,{useState} from 'react'
 
 import "../components/css/Dashboard.css"
-
-import img from "../images/2.png";
+import img2 from "../images/2.png";
+import img1 from "../images/1.png";
+import img3 from "../images/3.png";
+import img4 from "../images/7.jpg";
+import img5 from "../images/5.jpg";
+import img6 from "../images/6.jpg";
 
 function DashboardProfile() {
+  let number=Math.floor(Math.random() * (5))+1;
+  let img=[img2,img1,img3,img4,img5,img6];
+  console.log(img);
     return (
         <div className="Dashboard-profile">
         <div
@@ -13,7 +20,7 @@ function DashboardProfile() {
         >
           <div>
             {" "}
-            <img src={img} alt="Avatar" className="avatar" />
+            <img src={img[number]} alt="Avatar" className="avatar" />
           </div>
           <div>
             <h2 className="dashboard-para">Full Name</h2>
