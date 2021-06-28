@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 import Footer from "./Footer";
 import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
 import DashboardUpload from "./DashboardUpload";
 import msg from "../images/msg.gif"
-function Dashboard() {
-  
-  return (
-    <div className="Dashboard">
+function DashboardStudent() {
+    return (
+        <div className="Dashboard">
      <DashboardProfile />
       {/* <hr className="profile-hr"></hr> */}
       <div className="Dashboard-down">
-       <DashboardUpload />
+       {/* <DashboardUpload /> */}
+       <div></div>
        <DashboardNotices />
         
         <div className="part3">
@@ -21,7 +21,7 @@ function Dashboard() {
       </div>
       <Footer />
     </div>
-  );
+    )
 }
 
-export default Dashboard;
+export default DashboardStudent

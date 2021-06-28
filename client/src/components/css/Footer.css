@@ -11,7 +11,10 @@
     grid-template-columns: 1fr;
 
 } 
-
+.footlist-wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .footlist{
   display: flex;
   top: 2rem;
@@ -101,7 +104,7 @@ margin-left: 4rem;
   margin: 1rem 1rem;
 }
 }
-@media screen and (max-width: 540){
+@media screen and (max-width: 400px){
   .footlist{
     grid-template-columns: 20rem;
   }
@@ -121,6 +124,14 @@ margin-left: 4rem;
    margin: 1rem auto;
  }
  .footcompo{
-   margin: 1rem 2px;
+   margin: 1rem 9px;
  }
+ .footlist-wrap{
+  display: flex;
+}
+.feedcompo{
+  display: inline;
+  /* width: 100%; */
+  /* padding: 0 3rem; */
+}
  }

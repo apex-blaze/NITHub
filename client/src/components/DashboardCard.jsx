@@ -10,7 +10,7 @@ function DashboardCard(props) {
     console.log(props)
     return (
         <>
-            <div className="card card-body  wrap-card" style={{display:"grid",gridTemplateColumns:"1fr 1fr"}}> 
+            <div className="card card-body  wrap-card" > 
             <div>
               <h2 className="dashboard-titl">   {props.title}
               </h2>
@@ -18,7 +18,7 @@ function DashboardCard(props) {
                <a className={more?"read-more":"read-less"} style={{color:"#00ba8e",cursor:"pointer"}} onClick={()=>setMore(!more)} >Read More..</a>
                <a className={more?"read-less":"read-more"} style={{color:"#00ba8e",cursor:"pointer"}} onClick={()=>setMore(!more)} >Read Less..</a>
                 </div>
-                <div>
+                <div className="pdf-wala">
                   <div className="type-of">
                     <p>Type : {props.type}</p>
                 </div>

@@ -19,6 +19,8 @@ function Navlist()
       <div className="navbar-menu" ref={menuLinks}>
         <a href="#home"   className="navbar-link">Home</a>
         <a href="#services"  className="navbar-link">Services</a>
+        <a href="#Contact"  className="navbar-link">Contact</a>
+
         <a href="#aboutus"  className="navbar-link">About Us</a>
         {/* <div className="dropdown navbar-link">
   <a href="/" className="dropbtn navbar-link">Login{" "}<i className="fas fa-caret-down fa-xs" /></a>

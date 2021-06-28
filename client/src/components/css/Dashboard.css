@@ -46,7 +46,6 @@ border-radius: 1px solid #00916f;
     border: 1px solid #00ba8e;
     margin: 2rem auto;
     background-color: #ffffff;
-    visibility: hidden;
 }
 
 .file{
@@ -140,7 +139,9 @@ margin: 1rem auto;
 .wrap-card{
     /* /* border: none; */
     border-radius: 0; 
-    height: 18rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* height: 18rem; */
     /* border: 1px solid #00ba8e !important; */
 
 
@@ -347,3 +348,26 @@ embed::-webkit-scrollbar {
     }
    
 }
+@media screen and (max-width: 430px) {
+.part1{
+    width: 18rem;
+    margin: 2rem 2rem;
+}
+.part2{
+    width: 100%;
+}
+/* .pdf-wala{
+    width: 80%;
+} */
+.wrap-card{
+    grid-template-columns: 10rem 10rem;
+}
+.type-of{
+    width: 10rem;
+}
+.notice-pdf{
+    width: 10rem;
+    height: 12rem;
+}
+}
+

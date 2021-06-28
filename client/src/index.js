@@ -4,13 +4,16 @@ import App from "./App";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Register from "./components/Register";
 // import Footer from "./components/Footer";
-import Dashboard from "./components/Dashboard";
+import DashboardFaculty from "./components/DashboardFaculty";
+import DashboardStudent from "./components/DashboardStudent";
 const App1 = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/" exact component={App} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/dashboardstudent" component={DashboardStudent} />
+      <Route exact path="/dashboardfaculty" component={DashboardFaculty} />
+
     </Switch>
   </BrowserRouter>
 );
