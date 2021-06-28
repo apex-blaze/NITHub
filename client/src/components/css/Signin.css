@@ -2,11 +2,40 @@
   display: block;
   justify-items: center;
   align-items: center;
-  width: 18rem;
+  width: 22rem;
+  height: 24rem;
   position: relative;
-  border: 2.6px solid #00ba8e;
+  border: 2px solid #00ba8e;
   border-radius: 4px;
-  margin: 3rem auto;
+  margin: 0 auto;
+}
+.signin-st{
+  color: black;
+  font-size: 1.5rem;
+  /* padding-left: 8px; */
+  width: 53%;
+  padding: 0 auto;
+}
+.signin-st:hover{
+  color: #00ba8e;
+}
+.signin-st:focus{
+  color: #00ba8e;
+  border-bottom: 2px solid #0a9e7c !important;
+}
+.signin-fa{
+  color: black;
+  font-size: 1.5rem;
+  width: 50%;
+  margin-left: 3rem;
+  padding: 0 auto;
+}
+.signin-fa:hover{
+  color: #00ba8e;
+}
+.signin-fa:focus{
+  color: #00ba8e;
+  border-bottom: 2px solid #0a9e7c !important;
 }
 .signinhidden{
   display: none;
@@ -31,14 +60,30 @@
   margin: 0.7rem auto;
   transition-duration: 0.3s;
 }
+.signin-checkbox{
+  color: #00ba8e;
+  margin-left: -1rem;
+  margin-right: 8px;
+  padding-top: 2px;
+  height: 16px;
+  width: 16px;
+background: #00ba8e;
+background-color: #00ba8e;
+
+}
+.signin-checkbox:focus{
+background: #00ba8e;
+}
+.signin-checkbox:checked{
+  background-color: #00ba8e;
+  background: #00ba8e;
+}
 .signin-logo {
   color: #00ba8e;
   display: flex;
   margin: 1rem 7rem;
 }
-.signin-button:hover {
-  background-color: #079e7b;
-}
+
 .signin-google {
   color: white;
 }
@@ -64,11 +109,12 @@
 
 .signin-span {
   width: 100%;
-  padding: 8px;
+  /* padding: 8px; */
   border: none;
   box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px;
-  margin-bottom: 16px;
+  /* margin-top: 6px; */
+  /* margin-bottom: 16px; */
   /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
-  display: none;
+  /* display: none; */
+  visibility: hidden;
 }

@@ -1,24 +1,21 @@
 import React,{useState} from 'react'
 import Ajax from "../apis/ajax";
-import "../components/css/Dashboard.css"
+import "../components/css/Dashboard.css";
+import { useHistory } from "react-router-dom";
+
 function DashboardUpload() {
     const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
   const [type,setType]=useState("");
-  const dat=new Date;
+  const dat=new Date();
   const date=dat.getDay()+"/"+dat.getMonth()+"/"+dat.getFullYear();
-
+  let history=useHistory();
   console.log(date);
   function onChange(e, fun) {
     fun(e.target.value);
   }
-    function handleFile(e) {
-        e.preventDefault();
-        console.log(e.target.files[0]);
-        setFile(e.target.files[0]);
-      }
-      
+ 
   function handleFile(e) {
     e.preventDefault();
     console.log(e.target.files[0]);
@@ -44,6 +41,7 @@ function DashboardUpload() {
     const respo = await Ajax.post(`/notices`, formData, config);
     if (respo.status === 200) {
       console.log("Notice submitted successfully");
+      history.go(0);
     } else {
       console.log("Error while submitting notice");
     }

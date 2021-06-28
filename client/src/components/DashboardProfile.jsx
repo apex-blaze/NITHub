@@ -9,9 +9,8 @@ import img5 from "../images/5.jpg";
 import img6 from "../images/6.jpg";
 
 function DashboardProfile() {
-  let number=Math.floor(Math.random() * (5))+1;
+  let number=Math.floor(Math.random() * (6))+1;
   let img=[img2,img1,img3,img4,img5,img6];
-  console.log(img);
     return (
         <div className="Dashboard-profile">
         <div

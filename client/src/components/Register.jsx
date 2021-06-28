@@ -183,10 +183,10 @@ function Register() {
             required
           />
           <label htmlFor="Password">Password</label>
-          <div style={{ display: "grid", gridTemplateColumns: "94% 6%" }}>
+          <div className="register-password">
             <input
               type={passwordshowc ? "text" : "password"}
-              id="lname"
+              id="Password"
               name="password"
               onChange={(e) => onChange(e, setPassword)}
               placeholder="Password"
@@ -197,7 +197,7 @@ function Register() {
             />
           </div>
           <label htmlFor="Confirm password">Confirm password</label>
-          <div style={{ display: "grid", gridTemplateColumns: "94% 6%" }}>
+          <div className="register-password">
             <input
               type={passwordshow ? "text" : "password"}
               id="lname"

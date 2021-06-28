@@ -11,6 +11,9 @@ function Signin() {
   const [username, setUsername] = useState("");
   const [pwd, setPwd] = useState("");
   const [letlogin, setLetlogin] = useState();
+  const [student,setStudent]=useState(true);
+  const [faculty,setFaculty]=useState(false);
+
   const passwordvisiblity = () => {
     setPasswordshow(passwordshow ? false : true);
     setclick(click ? false : true);
@@ -18,9 +21,9 @@ function Signin() {
   function onChange(e, fun) {
     fun(e.target.value);
   }
-  function upload() {
-    document.getElementById("partupload").style.visibility = "visible";
-  }
+
+
+ 
   async function handleSubmit(e) {
     const alert = document.getElementById("message1");
     e.preventDefault();
@@ -32,6 +35,7 @@ function Signin() {
           username: email,
           password,
         });
+
       } else {
         console.log("faculty");
 
@@ -41,21 +45,184 @@ function Signin() {
         });
       }
       console.log(response);
-      if (response.status === 200) {
+      if (response.status === 200){ 
+        {
+          if(letlogin==false){
         alert.style.display = "none";
         history.push("/dashboard");
-        history.go(0);
+          }
+          else{
+            alert.style.display = "none";
+        history.push("/dashboard");
+        document.getElementById("partupload").style.visibility = "visible";
+
+          }
+        // history.go(0);
       }
+    }
     } catch (err) {
       console.log(err);
       if (err) {
-        alert.style.display = "block";
+        alert.style.visibility = "visible";
       }
     }
   }
   return (
+    
     <div className="signin">
-      <div
+
+      <div style={{width:"95%",margin:"0 auto",
+
+      }}>
+      {/* <i className="fas fa-sign-in-alt signin-logo fa-2x"></i> */}
+      {/* <h4 className="signin-">Sign in as:</h4> */}
+      <div className="wrap">
+            <p  style={{display:"grid",gridTemplateColumns:"1fr 1fr"}}>
+              <a
+                className="signin-st"
+
+                data-bs-toggle="collapse"
+                href="#student"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                onClick={()=>{setFaculty(false);setStudent(true);}}
+              >
+                Student
+              </a>
+              <a
+                              className="signin-fa"
+
+                data-bs-toggle="collapse"
+                href="#faculty"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                onClick={()=>{setFaculty(true);setStudent(false);}}
+
+              >
+                Faculty
+              </a>
+            </p>
+            </div>
+            <div className={student?"collapse-op":"collapse-clos"} id="student">
+            <form action="/login" method="post" onSubmit={handleSubmit}>
+
+            <label className="Register-label" htmlFor="Studentmail">
+            Student Mail Id:
+            
+          </label>
+          <input
+            type="email"
+            id="Studentmail"
+            name="Studentmail"
+            placeholder="Enter mail.."
+            required="required"
+            onChange={(e) => onChange(e, setEmail)}
+
+          />
+          <label htmlFor="Password">Password</label>
+          <input
+                    type={passwordshow ? "text" : "password"}
+                    name="password"
+                    id="Password"
+                    placeholder="Password"
+                    onChange={(e) => onChange(e, setPassword)}
+                    required
+                  />
+<div className="form-check">
+                  <input
+                    type="checkbox"
+                    className="signin-checkbox"
+                    id="exampleCheck1"
+                    onClick={passwordvisiblity}
+                  />
+                  <label className="form-check-label" htmlFor="exampleCheck1">
+                    show password
+                  </label>
+                </div>
+                <span
+                  id="message1"
+                  className="signin-span"
+                  style={{ color: "red" }}
+                >
+                  {" "}
+                  **Password is incorrect{" "}
+                </span>
+
+                <button
+                  type="submit"
+                  className="submit-button"
+                  onClick={() => setLetlogin(false)}
+      style={{marginTop:"4px"}}
+
+                >
+                  Submit
+                </button>
+  </form>
+            </div>
+            <div className={faculty?"collapse-op":"collapse-clos"}id="faculty">
+            <form action="/login/faculty" method="post" onSubmit={handleSubmit}>
+
+<label className="Register-label" htmlFor="FacultyUsername">
+Username:
+
+</label>
+<input
+type="text"
+id="FacultyUsername"
+name="FacultyUsername"
+placeholder="Enter Username.."
+required="required"
+onChange={(e) => onChange(e, setUsername)}
+
+
+/>
+<label htmlFor="FPassword">Password</label>
+<input
+        type={passwordshow ? "text" : "password"}
+        name="Fpassword"
+        id="FPassword"
+        placeholder="Password"
+        onChange={(e) => onChange(e, setPwd)}
+        required
+      />
+<div className="form-check">
+      <input
+        type="checkbox"
+        className="signin-checkbox"
+        id="exampleCheck2"
+        onClick={passwordvisiblity}
+      />
+      <label className="form-check-label" htmlFor="exampleCheck2">
+        show password
+      </label>
+    </div>
+    <span
+      id="message1"
+      className="signin-span"
+      style={{ color: "red" }}
+    >
+      {" "}
+      **Password is incorrect{" "}
+    </span>
+
+    <button
+      type="submit"
+      className="submit-button"
+      style={{marginTop:"4px"}}
+      onClick={() => setLetlogin(true)}
+    >
+      Submit
+    </button>
+</form></div>
+    </div>
+    </div>
+  );
+}
+
+export default Signin;
+{/* <div
         className="modal fade"
         id="student"
         tabIndex="-1"
@@ -214,18 +381,4 @@ function Signin() {
             </div>
           </div>
         </div>
-      </div>
-      {/* <i className="fas fa-user fa-7x signin-logo"></i> */}
-      <i className="fas fa-sign-in-alt signin-logo fa-4x"></i>
-      <h1 className="signin-header">Sign in</h1>
-      <h2 className="signin-header">With</h2>
-      <a href="/auth/google" className="signin-google">
-        <button className="signin-button">
-          Continue with <i className="fab fa-google"></i>
-        </button>
-      </a>
-    </div>
-  );
-}
-
-export default Signin;
+      </div> */}

@@ -20,7 +20,7 @@ function Navlist()
         <a href="#home"   className="navbar-link">Home</a>
         <a href="#services"  className="navbar-link">Services</a>
         <a href="#aboutus"  className="navbar-link">About Us</a>
-        <div className="dropdown navbar-link">
+        {/* <div className="dropdown navbar-link">
   <a href="/" className="dropbtn navbar-link">Login{" "}<i className="fas fa-caret-down fa-xs" /></a>
   <div className="dropdown-content">
   <a href="/faculty" style={{backgroundColor:"black",width:"10rem", fontSize:"1.2rem", border:"none"}}  className="navbar-link" data-bs-toggle="modal" data-bs-target="#faculty">
@@ -30,7 +30,7 @@ function Navlist()
   Login as Student
 </a>
   </div>
-</div>
+</div> */}
       </div>
     </div>     
     );
