@@ -50,17 +50,18 @@ span{
     display: none;
     visibility: hidden;
 }
-.green-section{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-}
+
 .arrow{
     height: 20rem;
-    width: 22rem;
+
+    width: 100%;
     display: flex;
-    margin-top: -5.7rem;
-    padding-top: 3rem;
-    padding-bottom: 10rem;
+    padding-top: 0rem;
+    padding-bottom: 13rem;
+}
+.arrow-res{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .home-started{
     background-color: #00c597; /* Green */
@@ -75,16 +76,14 @@ span{
     padding: 0.7rem;
     padding-top: 0.37rem;
 
-    font-weight: 360;
-    margin:7rem 4rem ;
-    margin-left: 0rem;
+    margin-top: 7rem;
     transition-duration: 0.3s;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .create-now{
     color: white;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    margin: 3rem auto;
+    margin: 1rem auto;
 }
   
   .home-started:hover{
@@ -94,10 +93,7 @@ span{
 
   }
 
-.home-started1{
-    display: 
-    none;
-}
+
 @media screen and (max-width: 1220px) {
     .mockup{
         height: 42vw;
@@ -108,7 +104,7 @@ span{
       
     .home-container{    
         grid-template-columns: 1fr;
-        height: 23rem;
+        height: 30rem;
     
     }
     .left{
@@ -120,15 +116,13 @@ span{
     .right{
         display: inline;
         padding: 0;
-        height:10rem;
+        height:20rem;
     }
     .go-green{
         grid-template-columns: 1fr 1fr;
         margin-top: 18rem;
     }
-    .mockup{
-        display: none;
-    }
+   
 .start{
     visibility: visible;
     display: block;
@@ -147,41 +141,42 @@ span{
         /* height: 70rem; */
     
     }
-    .go-green{
-        grid-template-columns: 2rem 20rem;
-        height: 19rem;
-    }
-    .start{
-        display: none;
-    }
+   
+   
+   .arrow-res{
+    grid-template-columns: 1fr;
+}
+
 .home-started{
-    display: none;
-}
-.home-started1{
-    background-color: #00c597; /* Green */
-    border: 1.8px solid white;
-    border-radius: 0.55rem;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    /* display: block; */
-    font-size: 1.5rem;
-    width: 12rem;
-    padding: 0.7rem;
-    padding-top: 0.37rem;
-
-    font-weight: 360;
-    margin:-8rem auto ;
-    transition-duration: 0.4s;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    display: block;
-    visibility: visible;
-
-}
-.home-started1:hover{
-    background-color: #0a9e7c;
-    color: white;
-  border: 1.9px solid white;
-
+    margin-top: 0rem;
 }
       }
+@media screen and (max-width: 430px) {
+.arrow{
+    padding: 0;
+    margin: 0;
+    height: 6rem;
+}
+.home-started{
+    margin-left: 2rem;
+}
+    .left{
+        height: 20rem;
+    }
+    .right{
+        height: 50rem;
+    }
+    .home-container{
+        height: 34rem;
+    }
+
+    .mockup-c{
+        display: none;
+    }
+    .arrow-res{
+        display: block;
+        width: 170%;
+        /* height: 20%; */
+    }
+      }
+

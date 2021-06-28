@@ -1,5 +1,4 @@
 .footer {
-    height: 7rem;
     width: 100%;
     left: 0px;
     top: 0px;
@@ -12,22 +11,18 @@
     grid-template-columns: 1fr;
 
 } 
-.footer-up{
-  display: block;
-  margin: 0rem auto;
-  margin-bottom: -5rem;
-  margin-top: -2rem;
-}
+
 .footlist{
   display: flex;
-  top: 0rem;
-  padding: 0rem 0rem;
+  top: 2rem;
+  padding: auto 0;
   display: grid;
-   grid-template-columns:25rem 15rem 25rem;
+   grid-template-columns:35rem 14rem 17rem;
 
 }
 .footcompo{
-  margin:0rem 2rem;
+  margin-left: 3rem;
+  padding: 1rem 1px;
   font-size: 1.2rem;
  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
  font-weight: 500;
@@ -41,40 +36,33 @@ a{
 color: #00ba8e;
 }
 
-.footmobile{
-  display: none;
-  /* visibility: hidden; */
-}
 .footer-hr{
  width: 90% !important;
  margin:0 auto;
  color: #00ba8e;
 }
-.footer-down{
-  display: none;
-}
-.footer-icons{
-  width: 40%;
-}
 
 
-.footer-cc1{
+.footer-cc{
   color: #00ba8e;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 100%;
   font-size: 1rem;
   text-align: center;
-  height: 1rem;
-  margin-bottom: -1rem;
  }
 .footer-contact{
   display: block;
   margin: 0 auto;
 }
 .foot-icons{
-  width:70%;
+  width:100%;
   display:block;
-  margin-left: 8rem;
+  
+  margin-top: 1rem;
+margin-left: 4rem;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  /* padding:  auto; */
   
 }
 .footer-logo{
@@ -94,7 +82,7 @@ color: #00ba8e;
 }
 @media screen and (max-width: 780px){
  .footlist{
-   grid-template-columns: 30rem;
+   grid-template-columns: 1fr;
  }
  
  .footer-down{
@@ -102,18 +90,37 @@ color: #00ba8e;
    grid-template-columns: 1fr;
  }
  .foot-icons{
-  width: 70%;
-  margin:0 auto;
+  width: 100%;
+  height: 3rem;
 }
-.footer
-{
-  margin: 0rem;
-  height: 13rem;
-}
+
 .footer-logo{
   margin: 1rem auto;
 }
 .footcompo{
-  margin: 1rem 2.7rem;
+  margin: 1rem 1rem;
 }
 }
+@media screen and (max-width: 540){
+  .footlist{
+    grid-template-columns: 20rem;
+  }
+  
+ 
+  .foot-icons{
+   width: 100%;
+   margin:0 auto;
+ }
+ .footer
+ {
+   margin: 0rem;
+   height: 25rem;
+   /* width: 2rem; */
+ }
+ .footer-logo{
+   margin: 1rem auto;
+ }
+ .footcompo{
+   margin: 1rem 2px;
+ }
+ }

@@ -39,9 +39,8 @@ function DashboardNotices() {
 
           {data && data.map(notice=>{
             return(
-              <div className={feed ? "collapse-op" : "collapse-clos"} id="feed">
+              <div className={feed ? "collapse-op wrapby" : "collapse-clos wrapby"} id="feed">
             <DashboardCard title={notice.title} description={notice.description} type={notice.type}  src={header+notice.pdf} date={notice.date} />
-  
         </div>
             )
           })}

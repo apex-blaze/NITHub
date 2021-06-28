@@ -161,6 +161,10 @@ color: white;
 .eye:focus{
   background-color: #00ba8e;
 }
+.register-password{
+ display:grid;
+  grid-template-columns: 94% 6%;
+}
 @media screen and (max-width: 960px) {
     .Register{
         width: 70%;
@@ -177,11 +181,30 @@ color: white;
     align-items: center;
     justify-content: center;
 }
-
+.eye{
+  margin-left:0rem;
+  padding-left:1rem;
+}
+.register-password{
+   grid-template-columns: 92% 8%;
+ }
 }
 @media screen and (max-width: 550px) {
 
 .each-avatar{
   grid-template-columns: 1fr 1fr;
 }
+.Register{
+  width: 90%;
+  height: 70%;
+  margin:0 auto;
+
+}
+.eye{
+  margin-left:-1rem;
+  padding-left:1.3rem;
+}
+.register-password{
+   grid-template-columns: 88% 12%;
+ }
 }

@@ -23,29 +23,19 @@ function Home() {
         </div>
       </div>
       <div className="go-green">
-        <div>
-          {" "}
+        <div className="mockup-c">
           <img className="mockup" src={mockup} alt="notificationimage" />
-          <img className="start" src={start} alt="startimage"/>
-        </div>
-        <div>
-          <div className="green-section">
-            <div>
-              <h3 className="create-now">Create your Account Now !!!</h3>
-              <img className="arrow" src={arrow} alt="arrow" />
-              <Link to="/register">
-                <button className="home-started1">Create Account</button>
-              </Link>
-            </div>
-
-            <div>
-              <Link to="/register">
-                <button className="home-started">Get Started</button>
-              </Link>
-            </div>
           </div>
+          <div className="arrow-res">
+
+              <h3 className="create-now" >Create your Account Now !!!
+              <img className="arrow" src={arrow} alt="arrow" /></h3>
+              <Link to="/register">
+                <button className="home-started">Create Account</button>
+              </Link>
+</div>
+           
         </div>
-      </div>
     </section>
   );
 }
