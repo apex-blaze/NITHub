@@ -49,12 +49,11 @@ function Signin() {
         {
           if(letlogin==false){
         alert.style.display = "none";
-        history.push("/dashboard");
+        history.push("/dashboardstudent");
           }
           else{
             alert.style.display = "none";
-        history.push("/dashboard");
-        document.getElementById("partupload").style.visibility = "visible";
+        history.push("/dashboardfaculty");
 
           }
         // history.go(0);
@@ -71,7 +70,7 @@ function Signin() {
     
     <div className="signin">
 
-      <div style={{width:"95%",margin:"0 auto",
+      <div style={{width:"90%",margin:"0 auto",
 
       }}>
       {/* <i className="fas fa-sign-in-alt signin-logo fa-2x"></i> */}

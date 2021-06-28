@@ -9,11 +9,11 @@ function Footlist() {
     return (  
         
             <div className="footlist">
-             <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr"}}>
+             <div className="footlist-wrap">
              <a href="/" className="footcompo" style={{color:"#00ba8e"}}>Support</a>
              <a href="/" className="footcompo">Contact</a>
              <a href="/" className="footcompo">About us</a>
-             <a href="/" className="footcompo">Feedback</a>
+             <a href="/" className="footcompo feedcompo">Feedback</a>
 
              </div>
              <div className="footer-logo">
