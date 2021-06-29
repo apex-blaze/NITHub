@@ -10,6 +10,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
+const email = require("./email");
 
 const app = express();
 
@@ -91,7 +92,7 @@ passport.deserializeUser(function (id, done) {
   }
 });
 
-app.get("/",function(req,res){
+app.get("/", function (req, res) {
   res.send("Backend is working fine!!");
 });
 
@@ -111,7 +112,6 @@ app.get("/notices", function (req, res) {
       async function fetchNotices() {
         const sort = { _id: "desc" };
         const response = await Notice.find({}, null, { sort: sort });
-        console.log(response);
         res.send(response);
       }
       fetchNotices();
@@ -120,21 +120,28 @@ app.get("/notices", function (req, res) {
 });
 
 app.post("/notices", function (req, res) {
-  console.log(req.body);
-  
-
   let file = new Notice({
     title: req.body.title,
     description: req.body.description,
     pdf: req.files.pdf.data.toString("base64"),
-    type:req.body.type,
-    date:req.body.date,
-    
+    type: req.body.type,
+    date: req.body.date,
   });
   file.save(function (err, notice) {
     if (err) console.log(err);
     else {
-      console.log(notice);
+      //successfully saved notice in DB
+
+      async function fetchUsers() {
+        let response = await User.find();
+
+        response = response?.map((user) => {
+          return user.username;
+        }); // response is array of all users eamils
+
+        email.newUserMail(response, notice);
+      }
+      fetchUsers();
     }
   });
   res.send("Ok thnx");
@@ -193,8 +200,8 @@ app.post("/register/faculty", function (req, res) {
 });
 
 app.post("/register", function (req, res) {
-  console.log(req.body);
-  const newUser = new User ({
+  // console.log(req.body);
+  const newUser = new User({
     username: req.body.username,
     fname: req.body.fname,
     lname: req.body.lname,
