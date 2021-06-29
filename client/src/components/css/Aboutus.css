@@ -1,0 +1,42 @@
+.aboutus{
+    padding-top:5rem;
+    height: 30rem;
+    background-color: #e2f8f3;
+
+}
+.about-hr
+{
+    width: 16%;
+    background-color: #00ba8e;
+    height:0.08rem;
+    border-radius: 1.5px solid #00ba8e;
+    display: block;
+    margin: 0 auto;
+}
+.about-title{
+    margin-bottom: 2rem;
+    color: #00ba8e;
+    text-align: center;
+}
+.about-us{
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+}
+.mail-content{
+    margin: 2rem;
+    font-size: 1.3rem;
+    
+    text-align: center;
+}
+@media screen and (max-width: 430px) {
+    .aboutus{
+        height: 50rem;
+        padding-top: 10rem;
+    
+    }
+    .about-hr{
+        width: 80%;
+    }
+    
+}

@@ -46,18 +46,18 @@ function Signin() {
       }
       console.log(response);
       if (response.status === 200){ 
-        {
-          if(letlogin==false){
+        
+          if(letlogin===false){
         alert.style.display = "none";
-        history.push("/dashboardstudent");
+        history.push("/dashboard/student");
           }
           else{
             alert.style.display = "none";
-        history.push("/dashboardfaculty");
+        history.push("/dashboard/faculty");
 
           }
         // history.go(0);
-      }
+      
     }
     } catch (err) {
       console.log(err);
@@ -70,7 +70,7 @@ function Signin() {
     
     <div className="signin">
 
-      <div style={{width:"90%",margin:"0 auto",
+      <div style={{width:"95%",margin:"0 auto",
 
       }}>
       {/* <i className="fas fa-sign-in-alt signin-logo fa-2x"></i> */}
@@ -80,7 +80,7 @@ function Signin() {
               <a
                 className="signin-st"
 
-                data-bs-toggle="collapse"
+                data-bs-toggle="model"
                 href="#student"
                 role="button"
                 aria-expanded="false"
@@ -92,7 +92,7 @@ function Signin() {
               <a
                               className="signin-fa"
 
-                data-bs-toggle="collapse"
+                data-bs-toggle="model"
                 href="#faculty"
                 role="button"
                 aria-expanded="false"
@@ -104,7 +104,8 @@ function Signin() {
               </a>
             </p>
             </div>
-            <div className={student?"collapse-op":"collapse-clos"} id="student">
+            
+            <div className={student?"collapse-op":"collapse-clos"}>
             <form action="/login" method="post" onSubmit={handleSubmit}>
 
             <label className="Register-label" htmlFor="Studentmail">
@@ -160,8 +161,9 @@ function Signin() {
                 </button>
   </form>
             </div>
-            <div className={faculty?"collapse-op":"collapse-clos"}id="faculty">
-            <form action="/login/faculty" method="post" onSubmit={handleSubmit}>
+
+<div className={faculty?"collapse-op":"collapse-clos"} id="faculty">
+ <form action="/login/faculty" method="post" onSubmit={handleSubmit}>
 
 <label className="Register-label" htmlFor="FacultyUsername">
 Username:
@@ -214,14 +216,15 @@ onChange={(e) => onChange(e, setUsername)}
     >
       Submit
     </button>
-</form></div>
+</form>
+</div>
     </div>
     </div>
   );
 }
 
 export default Signin;
-{/* <div
+/* <div
         className="modal fade"
         id="student"
         tabIndex="-1"
@@ -380,4 +383,4 @@ export default Signin;
             </div>
           </div>
         </div>
-      </div> */}
+      </div> */

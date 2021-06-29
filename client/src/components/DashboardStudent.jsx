@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
-import DashboardUpload from "./DashboardUpload";
 import msg from "../images/msg.gif"
 function DashboardStudent() {
     return (
@@ -12,7 +11,7 @@ function DashboardStudent() {
       {/* <hr className="profile-hr"></hr> */}
       <div className="Dashboard-down">
        {/* <DashboardUpload /> */}
-       <div></div>
+       <div className="dash-left"></div>
        <DashboardNotices />
         
         <div className="part3">

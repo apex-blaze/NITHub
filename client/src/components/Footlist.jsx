@@ -11,8 +11,8 @@ function Footlist() {
             <div className="footlist">
              <div className="footlist-wrap">
              <a href="/" className="footcompo" style={{color:"#00ba8e"}}>Support</a>
-             <a href="/" className="footcompo">Contact</a>
-             <a href="/" className="footcompo">About us</a>
+             <a href="#Contact" className="footcompo">Contact</a>
+             <a href="#aboutus" className="footcompo">About us</a>
              <a href="/" className="footcompo feedcompo">Feedback</a>
 
              </div>

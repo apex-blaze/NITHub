@@ -11,8 +11,8 @@ const App1 = () => (
     <Switch>
       <Route path="/" exact component={App} />
       <Route exact path="/register" component={Register} />
-      <Route exact path="/dashboardstudent" component={DashboardStudent} />
-      <Route exact path="/dashboardfaculty" component={DashboardFaculty} />
+      <Route exact path="/dashboard/student" component={DashboardStudent} />
+      <Route exact path="/dashboard/faculty" component={DashboardFaculty} />
 
     </Switch>
   </BrowserRouter>
