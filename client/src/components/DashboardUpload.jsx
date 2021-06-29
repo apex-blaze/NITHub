@@ -9,7 +9,7 @@ function DashboardUpload() {
   const [file, setFile] = useState(null);
   const [type,setType]=useState("");
   const dat=new Date();
-  const date=dat.getDay()+"/"+dat.getMonth()+"/"+dat.getFullYear();
+  const date=dat.getDate()+"/"+dat.getMonth()+"/"+dat.getFullYear();
   let history=useHistory();
   console.log(date);
   function onChange(e, fun) {

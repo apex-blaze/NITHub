@@ -321,6 +321,9 @@ embed::-webkit-scrollbar {
         width: 70%;
 
     }
+    .dash-left{
+        display: none;
+    }
 .Dashboard{
     height: 50rem;
 }
@@ -369,5 +372,19 @@ embed::-webkit-scrollbar {
     width: 10rem;
     height: 12rem;
 }
+
 }
 
+@media screen and (max-width: 370px) {
+ 
+    .notice-pdf{
+        width: 10rem;
+        height: 12rem;
+    }
+    .part2{
+        width: 100%;
+    }
+    .wrap-card{
+        grid-template-columns: 10rem 8rem;
+    }
+    }

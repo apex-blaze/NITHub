@@ -1,0 +1,97 @@
+.contact{
+    padding-top:1rem;
+    height: 43rem;
+    background-color: #e2f8f3;
+
+}
+.contact-hr
+{
+    width: 90%;
+    background-color: #00ba8e;
+    height:0.08rem;
+    border-radius: 1.5px solid #00ba8e;
+    display: block;
+    margin: 0 auto;
+}
+.contact-title{
+    padding-top: 4rem;
+    margin: 2rem auto;
+    color: #00ba8e;
+
+    text-align: center;
+}
+.contact-down-title{
+    margin-bottom: 2rem;
+    color: #00ba8e;
+
+    text-align: center;
+}
+.contact-all
+{
+
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.contact-1{
+    width: 90%;
+    border: 1.5px solid #9bd8ca;
+
+    margin: 2rem 2rem;
+}
+.contact-2{
+    width: 90%;
+    border: 1.5px solid #9bd8ca;
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    margin: 1rem 2rem;
+}
+.contact-mail{
+    width: 7rem;
+    height: 6rem;
+}
+
+.call-content{
+    font-size: 2rem;
+    margin: 2rem;
+}
+.mail-content{
+    margin: 2rem;
+    font-size: 1.3rem;
+    
+    text-align: center;
+}
+.contact-git{
+    color: #00ba8e;
+}
+.contact-git:hover{
+    color: #00916f;
+}
+@media screen and (max-width: 780px) {
+    .contact-all{
+    grid-template-columns: 100%;
+    }
+    .contact{
+        height: 77rem;
+        background-color: #e2f8f3;
+    
+    }
+    .contact-2{
+        grid-template-columns: 100%;
+    }
+}
+@media screen and (max-width: 430px) {
+    .contact{
+        height: 80rem;
+        background-color: #e2f8f3;
+    
+    }
+    .contact-1{
+        margin: 1rem auto;
+        }
+.contact-2{
+    grid-template-columns: 100%;
+}
+
+}

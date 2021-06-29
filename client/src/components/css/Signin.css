@@ -2,7 +2,7 @@
   display: block;
   justify-items: center;
   align-items: center;
-  width: 22rem;
+  width: 20rem;
   height: 24rem;
   position: relative;
   border: 2px solid #00ba8e;
@@ -13,7 +13,7 @@
   color: black;
   font-size: 1.5rem;
   /* padding-left: 8px; */
-  width: 53%;
+  width: 54%;
   padding: 0 auto;
 }
 .signin-st:hover{
@@ -122,5 +122,11 @@ background: #00ba8e;
 
 .signin{
   width: 18rem;
+}
+.signin-st{
+  width: 60%;
+}
+.signin-fa{
+  width: 55%;
 }
 }

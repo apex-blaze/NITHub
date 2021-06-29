@@ -64,7 +64,7 @@ function Register() {
           avatar,
         });
         console.log(response.status);
-        history.push("/dashboardstudent");
+        history.push("/dashboard/student");
       } catch (err) {
         console.log(err);
       }
