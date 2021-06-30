@@ -164,8 +164,9 @@ app.post(
     });
   }
 );
-
+let usern="";
 app.post("/login", passport.authenticate("user-local"), function (req, res) {
+  usern=req.body.username;
   const user = {
     username: req.body.username,
     password: req.body.password,
@@ -179,7 +180,6 @@ app.post("/login", passport.authenticate("user-local"), function (req, res) {
     }
   });
 });
-
 app.post("/register/faculty", function (req, res) {
   const newFaculty = {
     username: req.body.username,
@@ -198,7 +198,20 @@ app.post("/register/faculty", function (req, res) {
     }
   });
 });
-
+app.get("/register/faculty", function (req, res) {
+  Faculty.find({}, function (err, faculty) {
+    if (err) {
+      console.log(err);
+    } else {
+      async function fetchFaculty() {
+        const sort = { _id: "desc" };
+        const response = await Faculty.find({}, null, { sort: sort });
+        res.send(response);
+      }
+      fetchFaculty();
+    }
+  });
+});
 app.post("/register", function (req, res) {
   // console.log(req.body);
   const newUser = new User({
@@ -221,7 +234,20 @@ app.post("/register", function (req, res) {
     }
   });
 });
-
+app.get("/register", function (req, res) {
+  User.find({}, function (err, users) {
+    if (err) {
+      console.log(err);
+    } else {
+      async function fetchUsers() {
+        const sort = { _id: "desc" };
+        const response = await User.find({'username':usern}, null, { sort: sort });
+        res.send(response);
+      }
+      fetchUsers();
+    }
+  });
+});
 app.get("/logout", function (req, res) {
   req.logout();
   console.log("/ route pe bhejo launde ko");

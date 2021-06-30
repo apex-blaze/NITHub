@@ -12,7 +12,7 @@ function DashboardNotices() {
   useEffect(() => {
     async function fetchNotices() {
       const  response = await Ajax.get(`/notices`);
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
       // setSorce(`data:application/pdf;base64,${response.data[0].pdf}`);
       // console.log(sorce);
