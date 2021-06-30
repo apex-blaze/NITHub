@@ -7,7 +7,7 @@ function DashboardCard(props) {
     var len=desc.length;
     let less=desc.slice(0,81);
     let mor=desc.slice(82,len);
-    console.log(props)
+    // console.log(props)
     return (
         <>
             <div className="card card-body  wrap-card" > 

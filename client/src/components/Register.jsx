@@ -249,6 +249,7 @@ function Register() {
                   <img
                     src={img2}
                     alt="Avatar"
+                    value="2"
                     style={{ margin: "10px" }}
                     className=" dropdown-itemnavbar-link avatar1"
                     data-bs-toggle="modal"
@@ -258,6 +259,7 @@ function Register() {
                   <img
                     src={img1}
                     alt="Avatar"
+                    validate="1"
                     style={{ margin: "10px" }}
                     className=" dropdown-itemnavbar-link avatar1"
                     data-bs-toggle="modal"
@@ -266,6 +268,7 @@ function Register() {
                 <li value="img3" className="avatar-list">
                   <img
                     src={img3}
+                    value="3"
                     alt="Avatar"
                     style={{ margin: "10px" }}
                     className=" dropdown-itemnavbar-link avatar1"
@@ -275,6 +278,7 @@ function Register() {
                 <li value="img4" className="avatar-list">
                   <img
                     src={img4}
+                    value="4"
                     alt="Avatar"
                     style={{ margin: "10px" }}
                     className=" dropdown-itemnavbar-link avatar1"
@@ -283,6 +287,7 @@ function Register() {
                 </li>
                 <li value="img6" className="avatar-list">
                   <img
+                  value="6"
                     src={img6}
                     alt="Avatar"
                     style={{ margin: "10px" }}
@@ -292,6 +297,7 @@ function Register() {
                 </li>
                 <li value="img5" className="avatar-list">
                   <img
+                  value="5"
                     src={img5}
                     alt="Avatar"
                     style={{ margin: "10px" }}
