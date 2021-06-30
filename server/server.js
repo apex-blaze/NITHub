@@ -31,10 +31,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(fileUpload());
 
-mongoose.connect("mongodb://localhost:27017/userDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://admin-ricky:coldsteam34@cluster0.nynhu.mongodb.net/userDB",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -164,9 +167,9 @@ app.post(
     });
   }
 );
-let usern="";
+let usern = "";
 app.post("/login", passport.authenticate("user-local"), function (req, res) {
-  usern=req.body.username;
+  usern = req.body.username;
   const user = {
     username: req.body.username,
     password: req.body.password,
@@ -180,7 +183,10 @@ app.post("/login", passport.authenticate("user-local"), function (req, res) {
     }
   });
 });
+let facult = "";
 app.post("/register/faculty", function (req, res) {
+  // facult = req.body.username;
+  // console.log(facult);
   const newFaculty = {
     username: req.body.username,
     fname: req.body.fname,
@@ -205,7 +211,9 @@ app.get("/register/faculty", function (req, res) {
     } else {
       async function fetchFaculty() {
         const sort = { _id: "desc" };
-        const response = await Faculty.find({}, null, { sort: sort });
+        const response = await Faculty.find({}, null, {
+          sort: sort,
+        });
         res.send(response);
       }
       fetchFaculty();
@@ -213,6 +221,7 @@ app.get("/register/faculty", function (req, res) {
   });
 });
 app.post("/register", function (req, res) {
+  usern = req.body.username;
   // console.log(req.body);
   const newUser = new User({
     username: req.body.username,
@@ -241,7 +250,9 @@ app.get("/register", function (req, res) {
     } else {
       async function fetchUsers() {
         const sort = { _id: "desc" };
-        const response = await User.find({'username':usern}, null, { sort: sort });
+        const response = await User.find({ username: usern }, null, {
+          sort: sort,
+        });
         res.send(response);
       }
       fetchUsers();
@@ -249,7 +260,10 @@ app.get("/register", function (req, res) {
   });
 });
 app.get("/logout", function (req, res) {
+  facult = "";
+  usern = "";
   req.logout();
+  res.send("Logout Successful");
   console.log("/ route pe bhejo launde ko");
 });
 
