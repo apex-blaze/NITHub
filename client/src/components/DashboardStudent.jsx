@@ -13,8 +13,11 @@ function DashboardStudent() {
     async function fetchUsers() {
       const response = await Ajax.get(`/register`);
       setData(response.data);
-      console.log(response.data);
+      // console.log(response.data);
+      const yuser = await Ajax.get(`/user`);
+      console.log(yuser);
     }
+
     fetchUsers();
   }, []);
   return (

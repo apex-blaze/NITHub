@@ -1,3 +1,5 @@
+// ----------------------------- Modules/Packages ---------------------------------------
+
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -7,15 +9,21 @@ const cors = require("cors");
 const passport = require("passport");
 const fileUpload = require("express-fileupload");
 const passportLocalMongoose = require("passport-local-mongoose");
-
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const cookieParser = require("cookie-parser");
 const findOrCreate = require("mongoose-findorcreate");
 const email = require("./email");
 
 const app = express();
 
+// ----------------------------------  Middlewares -------------------------------------------
+
 app.use("/", express.static("public"));
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -24,20 +32,22 @@ app.use(
     secret: "ABCDEF",
     resave: false,
     saveUninitialized: false,
+    // cookie: {},
   })
 );
+
+app.use(cookieParser("ABCDEF"));
 
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(fileUpload());
 
-mongoose.connect(
-  "mongodb+srv://admin-ricky:coldsteam34@cluster0.nynhu.mongodb.net/userDB",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+// ---------------------------------- DataBase Connection/Schemas --------------------------------------
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -79,11 +89,15 @@ const Faculty = new mongoose.model("Faculty", facultySchema);
 passport.use("user-local", User.createStrategy()); // local strat
 passport.use("faculty-local", Faculty.createStrategy()); // local strat
 
+// ------------------------------------------- Cookie/Sessions -----------------------------------------
+
 passport.serializeUser(function (user, done) {
+  console.log(user.username);
   done(null, user.username);
 });
 
 passport.deserializeUser(function (id, done) {
+  console.log(id);
   if (id.username.toString().includes("@")) {
     User.findById(id, function (err, user) {
       done(err, user);
@@ -94,6 +108,8 @@ passport.deserializeUser(function (id, done) {
     });
   }
 });
+
+// ------------------------------------------ All Routes ------------------------------------------------
 
 app.get("/", function (req, res) {
   res.send("Backend is working fine!!");
@@ -259,6 +275,12 @@ app.get("/register", function (req, res) {
     }
   });
 });
+
+app.get("/user", function (req, res) {
+  console.log(req.user);
+  res.send(req.user);
+});
+
 app.get("/logout", function (req, res) {
   facult = "";
   usern = "";
@@ -267,7 +289,9 @@ app.get("/logout", function (req, res) {
   console.log("/ route pe bhejo launde ko");
 });
 
-const port = process.env.PORT || 5050;
+// -------------------------------------- Server Initiation --------------------------------------
+
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log("Server running on port " + port);
 });
