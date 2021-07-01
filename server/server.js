@@ -20,7 +20,7 @@ const app = express();
 app.use("/", express.static("public"));
 app.use(
   cors({
-    origin: "https://nithub.netlify.app/",
+    origin: "https://nithub.netlify.app",
     credentials: true,
   })
 );
