@@ -23,16 +23,25 @@ function Signin() {
   }
 
   async function handleSubmit(e) {
-    const alert = document.getElementById("message1");
+    let alert = letlogin
+      ? document.getElementById("message2")
+      : document.getElementById("message1");
     e.preventDefault();
     try {
       let response;
       if (letlogin === false) {
         console.log("student");
-        response = await Ajax.post(`/login`, {
-          username: email,
-          password,
-        });
+        response = await Ajax.post(
+          `/login`,
+          {
+            username: email,
+            password,
+          },
+          {
+            withCredentials: true,
+            Accept: "application/json",
+          }
+        );
       } else {
         console.log("faculty");
 
@@ -136,7 +145,7 @@ function Signin() {
               style={{ color: "red" }}
             >
               {" "}
-              **Password is incorrect{" "}
+              ** Email/Password is incorrect{" "}
             </span>
 
             <button
@@ -189,7 +198,7 @@ function Signin() {
               style={{ color: "red" }}
             >
               {" "}
-              **Password is incorrect{" "}
+              ** Username/Password is incorrect{" "}
             </span>
 
             <button

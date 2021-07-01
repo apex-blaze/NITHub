@@ -34,7 +34,6 @@ function DashboardProfile(props) {
   } else if (props.avatar === "img6") {
     num = img6;
   }
-
   async function handleLogout() {
     const response = await Ajax.get(`/logout`);
     if (response.status === 200) {
