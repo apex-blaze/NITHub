@@ -13,7 +13,7 @@ function Contactus() {
 <img src={msg} alt="mail" className="contact-mail"  style={{borderRadius:"10px",display:"block",margin:"2rem auto"}}></img><h3 className="contact-down-title"> SEND MAIL</h3>
 <p className="mail-content">Drop Us a mail at:<br></br>
 <span>
-nithub@gmail.com</span>
+NithHub@gmail.com</span>
 </p>
                 </div>
         

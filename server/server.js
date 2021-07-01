@@ -211,7 +211,7 @@ app.get("/register/faculty", function (req, res) {
     } else {
       async function fetchFaculty() {
         const sort = { _id: "desc" };
-        const response = await Faculty.find({}, null, {
+        const response = await Faculty.find({ username:facult }, null, {
           sort: sort,
         });
         res.send(response);

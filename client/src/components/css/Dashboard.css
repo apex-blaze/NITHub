@@ -22,7 +22,7 @@
   border-radius: 4px;
 }
 .logout-button:hover {
-  background-color: rgb(160, 15, 15);
+  background-color: #9bdbcc;
 }
 .button-end {
   display: flex;
