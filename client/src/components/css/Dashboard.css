@@ -287,7 +287,7 @@ textarea::-webkit-resizer {
   display: none;
   height: 1rem;
 }
-@media screen and (max-width: 1170px) {
+@media (max-width: 1170px) {
   .profile {
     width: 70%;
   }
@@ -305,7 +305,7 @@ textarea::-webkit-resizer {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .Dashboard-profile {
     height: 19rem;
   }
@@ -345,7 +345,7 @@ textarea::-webkit-resizer {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
   .part1 {
     width: 18rem;
 
@@ -372,7 +372,7 @@ textarea::-webkit-resizer {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media (max-width: 370px) {
   .notice-pdf {
     width: 100%;
     height: 12rem;

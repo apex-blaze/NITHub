@@ -106,7 +106,7 @@ color: #00ba8e;
 .navcolor-white{
   color:white;
 }
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
   body.active {
     overflow-y: hidden;
     overflow-x: hidden;
