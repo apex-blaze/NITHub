@@ -165,7 +165,7 @@ color: white;
  display:grid;
   grid-template-columns: 94% 6%;
 }
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
     .Register{
         width: 70%;
         height: 70%;
@@ -189,7 +189,7 @@ color: white;
    grid-template-columns: 92% 8%;
  }
 }
-@media screen and (max-width: 550px) {
+@media (max-width: 550px) {
 
 .each-avatar{
   grid-template-columns: 1fr 1fr;

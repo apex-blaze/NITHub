@@ -29,7 +29,7 @@
     
     text-align: center;
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
     .aboutus{
         height: 50rem;
         padding-top: 10rem;

@@ -94,13 +94,13 @@ span{
   }
 
 
-@media screen and (max-width: 1220px) {
+@media (max-width: 1220px) {
     .mockup{
         height: 42vw;
     }
 }
 
-  @media screen and (max-width: 960px) {
+  @media (max-width: 960px) {
       
     .home-container{    
         grid-template-columns: 1fr;
@@ -134,7 +134,7 @@ span{
       }
       
  
-  @media screen and (max-width: 650px) {
+  @media (max-width: 650px) {
       
     .home-container{    
         grid-template-columns: 1fr;
@@ -151,7 +151,7 @@ span{
     margin-top: 0rem;
 }
       }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
 .arrow{
     padding: 0;
     margin: 0;

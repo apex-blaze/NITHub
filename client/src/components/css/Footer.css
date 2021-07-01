@@ -66,7 +66,7 @@ a {
 .footer-logo {
   margin: 0rem auto;
 }
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .footlist {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -76,7 +76,7 @@ a {
     margin-left: 0rem;
   }
 }
-@media screen and (max-width: 780px) {
+@media (max-width: 780px) {
   .footlist {
     grid-template-columns: 1fr;
   }
@@ -97,7 +97,7 @@ a {
     margin: 1rem 1rem;
   }
 }
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
   .footlist {
     grid-template-columns: 20rem;
   }

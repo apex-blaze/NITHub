@@ -99,7 +99,7 @@ p{
     transform: rotateY(180deg);
   }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
     .Services{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -118,7 +118,7 @@ p{
 
 }
 
-@media screen and (max-width: 960px) {
+@media (max-width: 960px) {
   .Services{
       display: grid;
       grid-template-columns: 1fr;
