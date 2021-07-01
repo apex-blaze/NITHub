@@ -67,6 +67,7 @@ const facultySchema = new mongoose.Schema({
   password: String,
   dept: String,
   username: String,
+  avatar: String,
 });
 
 const noticeSchema = new mongoose.Schema({
@@ -92,7 +93,7 @@ passport.use("faculty-local", Faculty.createStrategy()); // local strat
 // ------------------------------------------- Cookie/Sessions -----------------------------------------
 
 passport.serializeUser(function (user, done) {
-  console.log(user.username);
+  // console.log(user.username);
   done(null, user.username);
 });
 
@@ -170,6 +171,8 @@ app.post(
   "/login/faculty",
   passport.authenticate("faculty-local"),
   function (req, res) {
+    facult = req.body.username;
+    // console.log(facult);
     const faculty = {
       username: req.body.username,
       password: req.body.password,
@@ -201,13 +204,12 @@ app.post("/login", passport.authenticate("user-local"), function (req, res) {
 });
 let facult = "";
 app.post("/register/faculty", function (req, res) {
-  // facult = req.body.username;
-  // console.log(facult);
   const newFaculty = {
     username: req.body.username,
     fname: req.body.fname,
     lname: req.body.lname,
     dept: req.body.department,
+    avatar: req.body.avatar,
   };
   Faculty.register(newFaculty, req.body.password, function (err, faculty) {
     if (err) {
@@ -227,7 +229,7 @@ app.get("/register/faculty", function (req, res) {
     } else {
       async function fetchFaculty() {
         const sort = { _id: "desc" };
-        const response = await Faculty.find({ username:facult }, null, {
+        const response = await Faculty.find({ username: facult }, null, {
           sort: sort,
         });
         res.send(response);

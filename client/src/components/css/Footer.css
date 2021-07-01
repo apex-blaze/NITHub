@@ -19,7 +19,7 @@
   top: 2rem;
   padding: auto 0;
   display: grid;
-  grid-template-columns: 35rem 16rem 17rem;
+  grid-template-columns: 40% 18% 20%;
 }
 .footcompo {
   margin-left: 3rem;

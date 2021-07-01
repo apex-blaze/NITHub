@@ -5,6 +5,7 @@ import Ajax from "../apis/ajax";
 import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
+
 import msg from "../images/msg.gif";
 function DashboardStudent() {
   const [data, setData] = useState(null);
@@ -42,9 +43,10 @@ function DashboardStudent() {
         <DashboardNotices />
 
         <div className="part3">
-          <img src={msg} alt="mail" width="80" height="78" />
+          {/* <img src={msg} alt="mail" width="80" height="78" /> */}
         </div>
       </div>
+
       <Footer />
     </div>
   );

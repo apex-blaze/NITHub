@@ -4,6 +4,9 @@
   background-color: #00916f;
   color: #ffffff;
 }
+.gayab {
+  display: none;
+}
 .profile {
   width: 35%;
   border-radius: 8px;
@@ -119,7 +122,7 @@
 }
 .part2 {
   display: block;
-  height: 100rem;
+  height: auto;
 }
 .collapse-button {
   font-weight: 500;
@@ -169,7 +172,8 @@
 .Dashboard-down {
   background-color: #eef0f1;
   display: grid;
-  height: 180rem;
+  height: auto;
+  padding-bottom: 2rem;
   grid-template-columns: 25% 60% 15%;
 }
 .dashboard-para {
@@ -333,9 +337,7 @@ textarea::-webkit-resizer {
   .profile {
     width: 100%;
   }
-  .part2 {
-    height: 150rem;
-  }
+
   .part3 {
     display: none;
   }
