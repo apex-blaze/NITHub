@@ -76,7 +76,7 @@ function Signin() {
         <div className="wrap">
           <p style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <a
-              className="signin-st"
+              className={student? "signin-st signin-select":"signin-st"}
               data-bs-toggle="model"
               href="#student"
               role="button"
@@ -90,7 +90,7 @@ function Signin() {
               Student
             </a>
             <a
-              className="signin-fa"
+              className={faculty?"signin-fa signin-select":"signin-fa"}
               data-bs-toggle="model"
               href="#faculty"
               role="button"
@@ -159,7 +159,7 @@ function Signin() {
           </form>
         </div>
 
-        <div className={faculty ? "collapse-op" : "collapse-clos"} id="faculty">
+        <div className={faculty ? "collapse-op" : "collapse-clos"}>
           <form action="/login/faculty" method="post" onSubmit={handleSubmit}>
             <label className="Register-label" htmlFor="FacultyUsername">
               Username:

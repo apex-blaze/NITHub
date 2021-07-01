@@ -10,6 +10,8 @@
   margin: 0 auto;
 }
 .signin-st{
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
   color: black;
   font-size: 1.5rem;
   /* padding-left: 8px; */
@@ -19,11 +21,10 @@
 .signin-st:hover{
   color: #00ba8e;
 }
-.signin-st:focus{
-  color: #00ba8e;
-  border-bottom: 2px solid #0a9e7c !important;
-}
+
 .signin-fa{
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
   color: black;
   font-size: 1.5rem;
   width: 50%;
@@ -34,6 +35,10 @@
   color: #00ba8e;
 }
 .signin-fa:focus{
+  color: #00ba8e;
+  border-bottom: 2px solid #0a9e7c !important;
+}
+.signin-select{
   color: #00ba8e;
   border-bottom: 2px solid #0a9e7c !important;
 }

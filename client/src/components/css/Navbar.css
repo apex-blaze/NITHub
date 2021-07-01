@@ -7,7 +7,7 @@
     background-color: black;
     border-radius: 0px;
     position: fixed;
-    /* opacity: 0.92; */
+    opacity: 0.92;
     z-index: 99;
   
 } 
@@ -19,6 +19,7 @@
   width: 5rem;
   vertical-align: top;
 }
+
 /* Headeing title */
 .header-title{
   display: inline-block;
@@ -99,7 +100,12 @@ color: #00ba8e;
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+.navcolor-green{
+  color: #00ba8e;
+}
+.navcolor-white{
+  color:white;
+}
 @media screen and (max-width: 960px) {
   body.active {
     overflow-y: hidden;
