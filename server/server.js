@@ -253,6 +253,11 @@ app.post("/register", function (req, res) {
     year: req.body.year,
     avatar: req.body.avatar,
   });
+  async function alreadyRegistered(username) {
+    const response = await User.findOne({ username: username });
+    if (response.username === req.body.username) res.send("duplicate");
+  }
+  alreadyRegistered(req.body.username);
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       console.log(err);

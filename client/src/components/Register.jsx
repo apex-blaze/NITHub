@@ -63,8 +63,14 @@ function Register() {
           password,
           avatar,
         });
-        console.log(response.status);
-        history.push("/dashboard/student");
+        console.log(response);
+        if (response.data === "duplicate") {
+          history.go(0);
+          alert("User with this email is already registered!!");
+        } else {
+          console.log(response.status);
+          history.push("/dashboard/student");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -287,7 +293,7 @@ function Register() {
                 </li>
                 <li value="img6" className="avatar-list">
                   <img
-                  value="6"
+                    value="6"
                     src={img6}
                     alt="Avatar"
                     style={{ margin: "10px" }}
@@ -297,7 +303,7 @@ function Register() {
                 </li>
                 <li value="img5" className="avatar-list">
                   <img
-                  value="5"
+                    value="5"
                     src={img5}
                     alt="Avatar"
                     style={{ margin: "10px" }}
