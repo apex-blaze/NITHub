@@ -20,7 +20,10 @@ const app = express();
 app.use("/", express.static("public"));
 app.use(
   cors({
-    origin: "https://nithub.netlify.app",
+    origin:
+      process.env.NODE_ENV !== "development"
+        ? "https://nithub.netlify.app"
+        : "http://localhost:3000",
     credentials: true,
   })
 );
@@ -253,10 +256,10 @@ app.post("/register", function (req, res) {
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       console.log(err);
-      res.send("Register ni hua!!");
+      res.send("Registration failed!!");
     } else {
       passport.authenticate("user-local")(req, res, function () {
-        res.send("Register ho gya!!");
+        res.send("Registered Successfully");
       });
     }
   });
@@ -288,7 +291,6 @@ app.get("/logout", function (req, res) {
   usern = "";
   req.logout();
   res.send("Logout Successful");
-  console.log("/ route pe bhejo launde ko");
 });
 
 // -------------------------------------- Server Initiation --------------------------------------
