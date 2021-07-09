@@ -57,7 +57,7 @@
 }
 .part1 {
   width: 90%;
-  height: 23rem;
+  height: 27rem;
   border-radius: 8px;
   border: 1px solid #00ba8e;
   margin: 2rem auto;
@@ -312,9 +312,9 @@ textarea::-webkit-resizer {
   .profile {
     width: 70%;
   }
-  .dash-left {
-    display: none;
-  }
+.dash-left{
+  display: none;
+}
   .Dashboard {
     height: 50rem;
   }

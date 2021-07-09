@@ -8,11 +8,11 @@ function DashboardUpload() {
   const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
   const [type, setType] = useState("");
+  const [branchtype,setBranchtype]=useState("");
   const dat = new Date();
   const month = parseInt(dat.getMonth()) + 1;
   const date = dat.getDate() + "/" + month + "/" + dat.getFullYear();
   let history = useHistory();
-  console.log(date);
   function onChange(e, fun) {
     fun(e.target.value);
   }
@@ -32,6 +32,7 @@ function DashboardUpload() {
     formData.append("description", description);
     formData.append("type", type);
     formData.append("date", date);
+    formData.append("branchtype",branchtype);
     // for (let key of formData.entries()) {
     //   console.log(key[0] + ", " + key[1]);
     // }
@@ -104,6 +105,26 @@ function DashboardUpload() {
             <option value="Intern/Placement">Internship/Placement</option>
             <option value="ExtraCurricular">ExtraCurricular</option>
             <option value="Others">Others</option>
+          </select>
+          <select
+            id="branch-types"
+            required="required"
+            name="branch-types"
+            className="upload-menu"
+            onChange={(e) => onChange(e, setBranchtype)}
+          >
+            <option value="">Department..</option>
+            <option value="all">All..</option>
+
+            <option value="ECE">
+              Electronics and Communication Engineering
+            </option>
+            <option value="CSE">Computer Science Engineering</option>
+            <option value="Electrical">Electrical Engineering</option>
+            <option value="Civil">Civil Engineering</option>
+            <option value="Mechanical">Mechanical Engineering</option>
+            <option value="Material">Material Engineering</option>
+            <option value="Architecture">Architecture Engineering</option>
           </select>
           <button className="submit-button">Upload!!</button>
         </form>
