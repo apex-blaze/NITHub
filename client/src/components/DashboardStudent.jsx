@@ -5,8 +5,7 @@ import Ajax from "../apis/ajax";
 import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
-
-import msg from "../images/msg.gif";
+import DashboardFilter from "./DashboardFilter";
 function DashboardStudent() {
   const [data, setData] = useState(null);
 
@@ -39,7 +38,9 @@ function DashboardStudent() {
       {/* <hr className="profile-hr"></hr> */}
       <div className="Dashboard-down">
         {/* <DashboardUpload /> */}
-        <div className="dash-left"></div>
+        <div className="dash-left">
+<DashboardFilter />
+        </div>
         <DashboardNotices />
 
         <div className="part3">
