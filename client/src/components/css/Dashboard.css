@@ -312,7 +312,9 @@ textarea::-webkit-resizer {
   .profile {
     width: 70%;
   }
-
+.dash-left{
+  display: none;
+}
   .Dashboard {
     height: 50rem;
   }

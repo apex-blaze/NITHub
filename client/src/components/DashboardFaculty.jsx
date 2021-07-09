@@ -6,8 +6,6 @@ import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
 import DashboardUpload from "./DashboardUpload";
-import DashboardFilter from "./DashboardFilter";
-import msg from "../images/msg.gif";
 function DashboardFaculty() {
   const [data, setData] = useState([]);
 
@@ -36,9 +34,7 @@ function DashboardFaculty() {
       {/* <hr className="profile-hr"></hr> */}
       <div className="dah-wrap">
         <div className="Dashboard-down">
-        <div>
           <DashboardUpload />
-          <DashboardFilter /></div>
           <DashboardNotices />
 
           <div className="part3">

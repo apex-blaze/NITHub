@@ -264,6 +264,7 @@ app.get("/register/faculty", function (req, res) {
 });
 app.post("/register", function (req, res) {
   usern = req.body.username;
+  brnchtype=req.body.branch;
   // console.log(req.body);
   const newUser = new User({
     username: req.body.username,
@@ -276,19 +277,22 @@ app.post("/register", function (req, res) {
   });
   async function alreadyRegistered(username) {
     const response = await User.findOne({ username: username });
-    if (response.username === req.body.username) res.send("duplicate");
-  }
-  alreadyRegistered(req.body.username);
-  User.register(newUser, req.body.password, function (err, user) {
-    if (err) {
-      console.log(err);
-      res.send("Registration failed!!");
-    } else {
-      passport.authenticate("user-local")(req, res, function () {
-        res.send("Registered Successfully");
+    if (response?.username === req.body.username) res.send("duplicate");
+    else{
+      User.register(newUser, req.body.password, function (err, user) {
+        if (err) {
+          console.log(err);
+          res.send("Registration failed!!");
+        } else {
+          passport.authenticate("user-local")(req, res, function () {
+            res.send("Registered Successfully");
+          });
+        }
       });
     }
-  });
+  }
+  alreadyRegistered(req.body.username);
+  
 });
 app.get("/register", function (req, res) {
   User.find({}, function (err, users) {
@@ -329,7 +333,10 @@ app.post("/filter", function (req, res) {
         async function fetchNotices() {
           const sort = { _id: "desc" };
           const response = await Notice.find({branchtype :brnchtype}, null, { sort: sort });
-          res.send(response);
+          const respons = await Notice.find({branchtype :"all"}, null, { sort: sort });
+          const merged = response.concat(respons) ;
+          res.send(merged);
+
         }
         fetchNotices();
       }

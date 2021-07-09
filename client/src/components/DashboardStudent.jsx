@@ -5,7 +5,6 @@ import Ajax from "../apis/ajax";
 import "./css/Dashboard.css";
 import DashboardNotices from "./DashboardNotices";
 import DashboardProfile from "./DashboardProfile";
-import DashboardFilter from "./DashboardFilter";
 function DashboardStudent() {
   const [data, setData] = useState(null);
 
@@ -39,7 +38,6 @@ function DashboardStudent() {
       <div className="Dashboard-down">
         {/* <DashboardUpload /> */}
         <div className="dash-left">
-<DashboardFilter />
         </div>
         <DashboardNotices />
 
