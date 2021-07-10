@@ -8,7 +8,7 @@ function newUserMail(toEmail, data) {
     to: toEmail,
     from: {
       name: "NITHUB",
-      email: "rickysehgal07@gmail.com",
+      email: "nithhub@gmail.com",
     },
     subject: `New Announcement : ${data.type}`,
     html: `<h1>Hello, from NITHub!!</h1>
