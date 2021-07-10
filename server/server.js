@@ -255,19 +255,21 @@ app.post("/register", function (req, res) {
   });
   async function alreadyRegistered(username) {
     const response = await User.findOne({ username: username });
-    if (response.username === req.body.username) res.send("duplicate");
-  }
-  alreadyRegistered(req.body.username);
-  User.register(newUser, req.body.password, function (err, user) {
-    if (err) {
-      console.log(err);
-      res.send("Registration failed!!");
-    } else {
-      passport.authenticate("user-local")(req, res, function () {
-        res.send("Registered Successfully");
+    if (response?.username === req.body.username) res.send("duplicate");
+    else {
+      User.register(newUser, req.body.password, function (err, user) {
+        if (err) {
+          console.log(err);
+          res.send("Registration failed!!");
+        } else {
+          passport.authenticate("user-local")(req, res, function () {
+            res.send("Registered Successfully");
+          });
+        }
       });
     }
-  });
+  }
+  alreadyRegistered(req.body.username);
 });
 app.get("/register", function (req, res) {
   User.find({}, function (err, users) {
