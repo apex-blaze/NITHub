@@ -13,8 +13,8 @@ function DashboardStudent() {
       const response = await Ajax.get(`/register`);
       setData(response.data);
       // console.log(response.data);
-      const yuser = await Ajax.get(`/user`);
-      console.log(yuser);
+      // const yuser = await Ajax.get(`/user`);
+      // console.log(yuser);
     }
 
     fetchUsers();
@@ -37,8 +37,7 @@ function DashboardStudent() {
       {/* <hr className="profile-hr"></hr> */}
       <div className="Dashboard-down">
         {/* <DashboardUpload /> */}
-        <div className="dash-left">
-        </div>
+        <div className="dash-left"></div>
         <DashboardNotices />
 
         <div className="part3">
